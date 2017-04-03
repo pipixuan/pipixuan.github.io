@@ -77,7 +77,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="刘子轩的笔记" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="好学" type="application/atom+xml" />
 
 
 
@@ -91,12 +91,12 @@
 
 <meta name="description" content="少壮不努力，老大徒伤悲">
 <meta property="og:type" content="website">
-<meta property="og:title" content="刘子轩的笔记">
+<meta property="og:title" content="好学">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="刘子轩的笔记">
+<meta property="og:site_name" content="好学">
 <meta property="og:description" content="少壮不努力，老大徒伤悲">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘子轩的笔记">
+<meta name="twitter:title" content="好学">
 <meta name="twitter:description" content="少壮不努力，老大徒伤悲">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title> 刘子轩的笔记 </title>
+  <title> 好学 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,12 +169,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">刘子轩的笔记</span>
+        <span class="site-title">好学</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">菜鸟独白</p>
       
   </div>
 
@@ -223,6 +223,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-wanted">
+          <a href="/wanted" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            求职
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -252,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/123/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/JavaScript应用开发理解模型与集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘子轩">
@@ -261,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘子轩的笔记">
+      <meta itemprop="name" content="好学">
     </span>
 
     
@@ -274,8 +284,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/01/123/" itemprop="url">
-                  123
+                <a class="post-title-link" href="/2017/04/01/JavaScript应用开发理解模型与集合/" itemprop="url">
+                  JavaScript 应用开发 ：理解模型与集合
                 </a>
               
             
@@ -329,7 +339,67 @@
       
         
           
-            
+            <p>在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Backbone 应用实例 》 这个课程，动手练习一下。效果会非常好。</p>
+<p>在文章里面，我会把需要的代码粘出来，不过我建议你不要直接去复制跟粘贴。每一个目录，每一个文件，每一行代码，最好可以亲自动手去做出来。这期间我们也会不断的回到浏览器上去测试，这样你能更好的理解，每个步骤的作用。每一个动作，都要动手去试一下。</p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>在开始之前，最好可以了解一点 JavaScript，jQuery，还有 Backbone 。不过，不懂也没关系，跟着这个练习去实践，不懂的地方，可以再单独去解决一下。我会在练习中提到，代码的具体的意思是什么。</p>
+<p>要做的这个小应用，可以管理任务列表，我们需要给应用程序一个结构，也就是把应用分成几个部分，在不同的部分里面，去撰写不同的代码，这样会更容易维护一些。提供这个结构可以使用 Backbone 这个类库。在 《 基于 MVC 的 JavaScript Web 富应用开发 》</p>
+<p>这本书里介绍了这款优秀的类库。它可以跟 jQuery 还有 Underscore 很好的结合到一块儿使用，在这个应用实例里面会用到这几样东西。</p>
+<p>下面，我们先去创建应用需要的目录和文件结构。</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。</p>
+<p>js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。这些东西在后面，我们会一点一点去添加。</p>
+<p>lib 这个目录里面是应用需要的各种类库，jQuery，Underscore，Backbone，另外还有一个 Backbone 的小插件，backbone.localStorage.js。这个插件的作用就是，会用浏览器的 Local Storage 来存储数据。用 bing.com 或 google.com 去搜索一下这些东西，然后把它们下载下来，放到 lib 这个目录的下面。</p>
+<p>assets 里面是应用需要的一点资源，一个样式表，还有一张背景图片。在这篇文章的附件里面，你可以下载到这两个资源。</p>
+<ul>
+<li>├── assets<ul>
+<li>├── base.css</li>
+<li>└── bg.png</li>
+</ul>
+</li>
+<li>├── index.html</li>
+<li>├── js<ul>
+<li>├── Collections</li>
+<li>│── TodoCollection.js</li>
+<li>├── Models</li>
+<li>│── Todo.js</li>
+<li>├── Routers</li>
+<li>│── Router.js</li>
+<li>├── Views</li>
+<li>│── AppView.js</li>
+<li>│── TodoView.js</li>
+<li>│── app.js</li>
+</ul>
+</li>
+<li>└── lib</li>
+<li>├── backbone-min.js</li>
+<li>├── backbone.localStorage.js</li>
+<li>├── jquery-2.1.1.min.js</li>
+<li>└── underscore-min.js<h3 id="主页的基本结构"><a href="#主页的基本结构" class="headerlink" title="主页的基本结构"></a>主页的基本结构</h3></li>
+</ul>
+<p>打开应用根目录下的 index.html，在这个文档里面，需要设计一下应用需要的界面，去定义数据的模板，链接需要的样式表，依赖的库文件，还有即将要用到的 JavaScript 代码文件。选择一款简单的编辑器，比如 Brackets 编辑器，然后输入下面这些代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=<span class="string">"zh-hans"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;Todos&lt;/title&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://ninghao.net/assets/base.css"</span>&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line"></div><div class="line">     需要的各种类库 </div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/lib/jquery-2.1.1.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/lib/underscore-min.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/lib/backbone-min.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/lib/backbone.localStorage.js"</span>&gt;&lt;/script&gt;</div><div class="line">    </div><div class="line">    &lt;!-- 应用的代码 --&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/Models/Todo.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/Collections/TodoCollection.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/Views/TodoView.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/Views/AppView.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/Routers/Router.js"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=<span class="string">"https://ninghao.net/js/app.js"</span>&gt;&lt;/script&gt;</div><div class="line">    </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="应用界面需要的代码"><a href="#应用界面需要的代码" class="headerlink" title="应用界面需要的代码"></a>应用界面需要的代码</h3><p>接下来，在这个 index.html 里面，需要去设计一下应用需要的界面的 HTML 代码。这个界面的样式，已经在 assets/base.css 这个样式表里面定义好了。你可以直接把下面这些代码，放到 index.html 里面的 body 标签里面。这些代码构建起了应用的界面。</p>
+<h6 id="先了解这里面的其中的几个元素："><a href="#先了解这里面的其中的几个元素：" class="headerlink" title="先了解这里面的其中的几个元素："></a>先了解这里面的其中的几个元素：</h6><ul>
+<li>todoapp，它是包装应用界面的一个容器。</li>
+<li>new-todo，这是一个 text 类型的 input元素，就是一个文本框，用户可以在里面输入内容，来创建新的任务。</li>
+<li>todo-list，它是一个用来显示任务列表的地方。</li>
+</ul>
+<p>保存一下，然后在浏览器里面去预览一下，直接打开这个<br>index.html 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"todoapp"</span>&gt;  </div><div class="line">    &lt;!-- 页头部分 --&gt;</div><div class="line">    &lt;header id=<span class="string">"header"</span>&gt;</div><div class="line">        &lt;h1&gt;todos&lt;/h1&gt;</div><div class="line">        &lt;!-- 创建任务用的文本框 --&gt;</div><div class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"new-todo"</span> placeholder=<span class="string">"需要做点什么呢？"</span> autofocus&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;!-- 主体部分 --&gt;</div><div class="line">    &lt;section id=<span class="string">"main"</span>&gt;</div><div class="line">        &lt;!-- 标记所有任务为完成状态 --&gt;</div><div class="line">        &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> name=<span class="string">"toggle-all"</span> id=<span class="string">"toggle-all"</span>&gt;</div><div class="line">        &lt;label <span class="keyword">for</span>=<span class="string">"toggle-all"</span>&gt;标记全部为完成&lt;/label&gt;</div><div class="line">        &lt;!-- 显示任务列表的地方 --&gt;</div><div class="line">        &lt;ul id=<span class="string">"todo-list"</span>&gt;&lt;/ul&gt;</div><div class="line">    &lt;/section&gt;</div><div class="line">    &lt;!-- 页脚部分：还剩多少个没完成的任务，导航，清空完成的任务 --&gt;</div><div class="line">    &lt;footer id=<span class="string">"footer"</span>&gt;&lt;/footer&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;div id=<span class="string">"info"</span>&gt;</div><div class="line">    &lt;p&gt;双击可以编辑任务&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="创建模型-表示任务数据"><a href="#创建模型-表示任务数据" class="headerlink" title="创建模型 - 表示任务数据"></a>创建模型 - 表示任务数据</h3><p>模型在 Backbone 里面，是用来表示数据的。 在我们的这个小应用里面，需要处理的数据是任务，这个任务就可以是一个模型，给这个任务模型起个合适的名字，比如 Todo 。</p>
+<p>打开 js/Models/Todo.js，在这个文件里面，我们去定义这个任务模型：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var app = app || &#123;&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 模型 Model </div><div class="line"> *</div><div class="line"> * 创建一个叫 Todo 的模型来表示任务数据</div><div class="line"> */</div><div class="line">app.Todo = Backbone.Model.extend(&#123;</div><div class="line"></div><div class="line">    defaults: &#123;</div><div class="line">        title: <span class="string">''</span>,</div><div class="line">        completed: <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>在文件的一开始，定义了一个叫 app 的对象，它有点像是一个命名空间，就是我们在全局范围内，只定义了一个东西，就是这个对象。这样不容易跟第三方的代码库发生命名的冲突。 在应用里面，需要用到的其它的东西，都可以作为这个 app 对象的一个属性。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = app || &#123;&#125;;</div></pre></td></tr></table></figure>
+<p>app.Todo，就是定义好的用来表示任务数据的模型。在这个模型里面，用到了一个 defaults 属性，在这个属性里面，可以为模型添加默认的属性。title ，表示任务的标题，completed，表示任务的完成的状态。如果它的值是 true ，就表示任务已经完成了，如果它的值是 false ，表示任务还在进行中，默认我们让它的值默认等于 false。</p>
+<h3 id="创建集合-表示任务的列表"><a href="#创建集合-表示任务的列表" class="headerlink" title="创建集合 - 表示任务的列表"></a>创建集合 - 表示任务的列表</h3><p>打开 js/Collections/TodoCollection.js。在这个文件里面，去定义表示任务列表的集合。app.TodoCollection 就是为应用创建的一个集合，跟这个集合对应的模型就是前面创建的 app.Todo 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var app = app || &#123;&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 集合 Collection</div><div class="line"> */</div><div class="line">app.TodoCollection = Backbone.Collection.extend(&#123;</div><div class="line">    </div><div class="line">    // 指定与这个集合相关的模型</div><div class="line">    model: app.Todo,</div><div class="line">    // 使用 Backbone 的 LocalStorage</div><div class="line">    // 为存储的数据添加一个 todo 前缀</div><div class="line">    <span class="built_in">local</span>Storage: new Backbone.LocalStorage(<span class="string">'todo'</span>)</div><div class="line">    </div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 实例化一下 TodoCollection 这个集合</div><div class="line">app.todoList = new app.TodoCollection;</div></pre></td></tr></table></figure>
+<p>在 Backbone 的集合里面， 有一些方法，可以保存，删除，提取数据模型。比如可以把数据存储到指定的数据源里面，我们也可以从指定的数据源那里把数据提供出来，然后把它添加到这个表示任务列表的集合里面。这些动作用的就是 jQuery 的 Ajax 方法。我们可以为应用提供一个处理数据的后台程序，比如可以使用 Drupal ，WordPress 或者 Laravel 等等。</p>
+<p>不过，在这个小应用里面，我们使用了 Backbone 的 Local Storage 插件（ backbone.localStorage.js ），它会覆盖掉 Backbone 的 Sync 方法。用了这个小插件以后，Backbone 会把数据放到浏览器的 Local Storage 里面，也就是放到用户的本地浏览器里面存储起来。</p>
+<p>localStorage: new Backbone.LocalStorage(‘todo’)</p>
+<p>这行代码的作用就是去使用 Backbone 的这个 Local Storage 插件，同时指定了一下数据的前缀。这里的 todo ，就是存储的数据的前缀，也可以把它想像成是一个命名空间，也就是为了避免冲突，为要存储的数据起的一个名字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.todoList = new app.TodoCollection;</div></pre></td></tr></table></figure>
+<p>上面这行代码的功能是实例化了一下创建的这个集合。这样在应用的其它地方，可以用到 app.todoList 这个集合对象。</p>
+
           
         
       
@@ -381,7 +451,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘子轩的笔记">
+      <meta itemprop="name" content="好学">
     </span>
 
     
@@ -559,6 +629,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="m18519760864@163.com" target="_blank" title="email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pipixuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/iissnan/answers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
