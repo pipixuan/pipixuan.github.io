@@ -89,16 +89,19 @@
 
 
 
-<meta name="description" content="在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Back">
+<meta name="description" content="目录结构根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。
+js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 应用开发 ：理解模型与集合">
 <meta property="og:url" content="http://yoursite.com/2017/04/01/JavaScript应用开发理解模型与集合/index.html">
 <meta property="og:site_name" content="好学">
-<meta property="og:description" content="在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Back">
-<meta property="og:updated_time" content="2017-04-03T13:35:48.579Z">
+<meta property="og:description" content="目录结构根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。
+js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。">
+<meta property="og:updated_time" content="2017-04-04T06:20:24.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 应用开发 ：理解模型与集合">
-<meta name="twitter:description" content="在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Back">
+<meta name="twitter:description" content="目录结构根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。
+js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。">
 
 
 
@@ -173,7 +176,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">菜鸟独白</p>
       
   </div>
 
@@ -333,13 +336,7 @@
       
 
       
-        <p>在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Backbone 应用实例 》 这个课程，动手练习一下。效果会非常好。</p>
-<p>在文章里面，我会把需要的代码粘出来，不过我建议你不要直接去复制跟粘贴。每一个目录，每一个文件，每一行代码，最好可以亲自动手去做出来。这期间我们也会不断的回到浏览器上去测试，这样你能更好的理解，每个步骤的作用。每一个动作，都要动手去试一下。</p>
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>在开始之前，最好可以了解一点 JavaScript，jQuery，还有 Backbone 。不过，不懂也没关系，跟着这个练习去实践，不懂的地方，可以再单独去解决一下。我会在练习中提到，代码的具体的意思是什么。</p>
-<p>要做的这个小应用，可以管理任务列表，我们需要给应用程序一个结构，也就是把应用分成几个部分，在不同的部分里面，去撰写不同的代码，这样会更容易维护一些。提供这个结构可以使用 Backbone 这个类库。在 《 基于 MVC 的 JavaScript Web 富应用开发 》</p>
-<p>这本书里介绍了这款优秀的类库。它可以跟 jQuery 还有 Underscore 很好的结合到一块儿使用，在这个应用实例里面会用到这几样东西。</p>
-<p>下面，我们先去创建应用需要的目录和文件结构。</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。</p>
+        <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。</p>
 <p>js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。这些东西在后面，我们会一点一点去添加。</p>
 <p>lib 这个目录里面是应用需要的各种类库，jQuery，Underscore，Backbone，另外还有一个 Backbone 的小插件，backbone.localStorage.js。这个插件的作用就是，会用浏览器的 Local Storage 来存储数据。用 bing.com 或 google.com 去搜索一下这些东西，然后把它们下载下来，放到 lib 这个目录的下面。</p>
 <p>assets 里面是应用需要的一点资源，一个样式表，还有一张背景图片。在这篇文章的附件里面，你可以下载到这两个资源。</p>
@@ -429,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/03/05/HTML5/" rel="next" title="HTML5">
+                <i class="fa fa-chevron-left"></i> HTML5
               </a>
             
           </div>
@@ -438,6 +435,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/04/移动web开发概念/" rel="prev" title="移动web开发概念">
+                移动web开发概念 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -509,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number"></span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主页的基本结构"><span class="nav-number"></span> <span class="nav-text">主页的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用界面需要的代码"><span class="nav-number"></span> <span class="nav-text">应用界面需要的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#先了解这里面的其中的几个元素："><span class="nav-number">0.0.1.</span> <span class="nav-text">先了解这里面的其中的几个元素：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建模型-表示任务数据"><span class="nav-number"></span> <span class="nav-text">创建模型 - 表示任务数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建集合-表示任务的列表"><span class="nav-number"></span> <span class="nav-text">创建集合 - 表示任务的列表</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主页的基本结构"><span class="nav-number">2.</span> <span class="nav-text">主页的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用界面需要的代码"><span class="nav-number">3.</span> <span class="nav-text">应用界面需要的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#先了解这里面的其中的几个元素："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">先了解这里面的其中的几个元素：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建模型-表示任务数据"><span class="nav-number">4.</span> <span class="nav-text">创建模型 - 表示任务数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建集合-表示任务的列表"><span class="nav-number">5.</span> <span class="nav-text">创建集合 - 表示任务的列表</span></a></li></ol></div>
             
 
           </div>

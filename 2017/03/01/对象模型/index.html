@@ -1,0 +1,792 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="好学" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1.基本概念DOM Document Object Model 文档对象模型
+就是把HTML文档模型化，当作对象来处理
+DOM提供的一系列属性和方法可以视作一个工具箱，极大地方了我们对文档的处理。
+1.1.内容概念文档(Document)：就是指HTML或者XML文件
+节点(Node)：HTML文档中的所有内容都可以称之为节点，常见的节点有
+元素节点 属性节点 文本节点 注释节点
+元素(Eleme">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象模型：DOM操作">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/对象模型/index.html">
+<meta property="og:site_name" content="好学">
+<meta property="og:description" content="1.基本概念DOM Document Object Model 文档对象模型
+就是把HTML文档模型化，当作对象来处理
+DOM提供的一系列属性和方法可以视作一个工具箱，极大地方了我们对文档的处理。
+1.1.内容概念文档(Document)：就是指HTML或者XML文件
+节点(Node)：HTML文档中的所有内容都可以称之为节点，常见的节点有
+元素节点 属性节点 文本节点 注释节点
+元素(Eleme">
+<meta property="og:updated_time" content="2017-04-04T07:26:03.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对象模型：DOM操作">
+<meta name="twitter:description" content="1.基本概念DOM Document Object Model 文档对象模型
+就是把HTML文档模型化，当作对象来处理
+DOM提供的一系列属性和方法可以视作一个工具箱，极大地方了我们对文档的处理。
+1.1.内容概念文档(Document)：就是指HTML或者XML文件
+节点(Node)：HTML文档中的所有内容都可以称之为节点，常见的节点有
+元素节点 属性节点 文本节点 注释节点
+元素(Eleme">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/01/对象模型/"/>
+
+
+
+
+
+  <title> 对象模型：DOM操作 | 好学 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">好学</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">菜鸟独白</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wanted">
+          <a href="/wanted" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            求职
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/对象模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘子轩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/background.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                对象模型：DOM操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T23:10:21+08:00">
+                2017-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h3><p>DOM Document Object Model 文档对象模型</p>
+<p>就是把HTML文档模型化，当作对象来处理</p>
+<p>DOM提供的一系列属性和方法可以视作一个工具箱，极大地方了我们对文档的处理。</p>
+<h5 id="1-1-内容概念"><a href="#1-1-内容概念" class="headerlink" title="1.1.内容概念"></a>1.1.内容概念</h5><p>文档(Document)：就是指HTML或者XML文件</p>
+<p>节点(Node)：HTML文档中的所有内容都可以称之为节点，常见的节点有</p>
+<p>元素节点 属性节点 文本节点 注释节点</p>
+<p>元素(Element)：HTML文档中的标签可以称为元素</p>
+<h5 id="1-2-结构概念"><a href="#1-2-结构概念" class="headerlink" title="1.2.结构概念"></a>1.2.结构概念</h5><p>父节点 当前节点的父级</p>
+<p>子节点 当前节点的子级</p>
+<p>兄弟节点 和当前节点同属一个父级的节点</p>
+<h3 id="2-获取元素"><a href="#2-获取元素" class="headerlink" title="2.获取元素"></a>2.获取元素</h3><p>getElementById：通过id寻找一个元素（找到的是一个元素对象） 该方法只能被document对象调用（同一个文档中id不能重复）</p>
+<p>getElementsByTagName：通过标签名寻找一类元素（找到的是由元素对象组成的伪数组）<br>即可以被document调用，又可以被元素对象调用，被元素对象调用时表示在该元素对象内部执行查找</p>
+<h3 id="3-设置属性"><a href="#3-设置属性" class="headerlink" title="3.设置属性"></a>3.设置属性</h3><p>元素对象.属性名 = “属性值”等价于&lt;标签 属性名=”属性值”&gt;</p>
+<h3 id="4-绑定事件"><a href="#4-绑定事件" class="headerlink" title="4.绑定事件"></a>4.绑定事件</h3><p>事件三要素</p>
+<p>事件源.事件 = function(){ 事件处理程序 }等价于&lt;标签 事件=”事件处理程序”&gt;</p>
+<h3 id="5-this指向"><a href="#5-this指向" class="headerlink" title="5.this指向"></a>5.this指向</h3><p>1.纯属的函数调用：this指向全局对象</p>
+<p>2.作为对象方法调用：this指向这个上级对象</p>
+<p>3.作为构造函数调用： this指向这个新对象</p>
+<p>4.app调用（改变this的指向）：它的第一个参数就是表示改变后的调用这个函数的对象，因此this指向的就是第一个参数<br>当参数为空时，默认调用全局对象</p>
+<h3 id="6-常用属性"><a href="#6-常用属性" class="headerlink" title="6.常用属性"></a>6.常用属性</h3><h5 id="6-1-常用标签属性"><a href="#6-1-常用标签属性" class="headerlink" title="6.1.常用标签属性"></a>6.1.常用标签属性</h5><p>DOM对象的属性和HTML的标签属性几乎是一致的，常用的有src、title、className、href和style<br>其中className对应就是标签的class属性，但是由于class在JS中是关键字，所以变成了className</p>
+<h5 id="6-2内部文本属性"><a href="#6-2内部文本属性" class="headerlink" title="6.2内部文本属性"></a>6.2内部文本属性</h5><h6 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h6><p>获取和设置标签中的内容，设置的内容会当作节点对象被解析到DOM树上</p>
+<h6 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h6><p>获取和设置标签中的内容，设置的内容会被当作普通文本（有兼容性问题，旧版ff不支持）</p>
+<h6 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h6><p>获取和设置标签中的内容，设置的内容会被当作普通文本（有兼容性问题，旧版IE不支持）</p>
+<h5 id="6-3常用表单属性"><a href="#6-3常用表单属性" class="headerlink" title="6.3常用表单属性"></a>6.3常用表单属性</h5><p>常见的表单元素属性有：</p>
+<p>type、value、checked、selected、disabled</p>
+<p>type可以设置input元素的类型</p>
+<p>value可以设置input元素的值</p>
+<p>checked可以设置input元素是否选中</p>
+<p>selected 可以设置下拉列表select中的option是否被选中</p>
+<p>disabled 可以设置input元素是否被禁用</p>
+<p>文本框获取焦点和失去焦点：<br>获取焦点事件是onfocus 失去焦点事件是onblur  (不是所有的标签都有这个事件) 更多详细内容可以查阅w3School</p>
+<h4 id="6-4-自定义属性"><a href="#6-4-自定义属性" class="headerlink" title="6.4.自定义属性"></a>6.4.自定义属性</h4><p>对象的自定义属性：<br>可以像给对象设置属性一样，给元素对象设置属性</p>
+<p>标签的自定义属性：<br>可以通过getAttribute()和setAttribute()设置和获取标签属性，通过removeAttribute()移除标签的属性<br>正常浏览器中 HTML中有规定的属性 两种方式才可以相互设置和获取</p>
+<p>总之用setAttribute设置的就用getAttribute获取 用对象的自定义属性设置的就用对象的自定义属性获取 以免出问题</p>
+<h3 id="7-节点"><a href="#7-节点" class="headerlink" title="7.节点"></a>7.节点</h3><h5 id="7-1节点类型"><a href="#7-1节点类型" class="headerlink" title="7.1节点类型"></a>7.1节点类型</h5><p>node.nodeType</p>
+<p>1表示元素节点 2表示属性节点 3表示文本节点</p>
+<h5 id="7-2节点层次"><a href="#7-2节点层次" class="headerlink" title="7.2节点层次"></a>7.2节点层次</h5><p>所有获取节点相关属性都没有兼容性问题</p>
+<p>childNodes     //子节点 </p>
+<p>children        //子元素<br>虽然不是早期DOM标准中的方法，但是所有浏览器都支持</p>
+<p>nextSibling //下一个兄弟节点</p>
+<p>nextElementSibling //下一个兄弟元素 有兼容性问题</p>
+<p>previousSibling//上一个兄弟节点</p>
+<p>previousElementSibling //上一个兄弟元素 有兼容性问题</p>
+<p>firstChild //第一个节点</p>
+<p>firstElementChild //第一个子元素 有兼容性问题</p>
+<p>lastChild //最后一个子节点</p>
+<p>lastElementChild //最后一个子元素 有兼容性问题</p>
+<p>parentNode //父节点 （一定是元素节点，所以无需处理）</p>
+<h3 id="8-样式属性"><a href="#8-样式属性" class="headerlink" title="8.样式属性"></a>8.样式属性</h3><p>style属性是对象，style对象的属性是字符串<br>style只能获取和设置行内样式</p>
+<p>DOM对象中style的属性和标签中style内的值几乎一样<br>只是带有 - 的属性名较为特殊（如background-color变成了backgroundColor），因为在JS中 - 不能作为标识符</p>
+<h6 id="设置和获取样式"><a href="#设置和获取样式" class="headerlink" title="设置和获取样式"></a>设置和获取样式</h6><p>通过对象的style属性只能设置和获取行内样式</p>
+<p>获取样式的时候 如果行内没有该样式 输出空字符串</p>
+<p>设置样式的时候 赋的值是一个字符串 如果这个属性有单位 一定要节点加单位</p>
+<h6 id="什么情况通过class控制样式-什么情况通过style控制样式"><a href="#什么情况通过class控制样式-什么情况通过style控制样式" class="headerlink" title="什么情况通过class控制样式 什么情况通过style控制样式"></a>什么情况通过class控制样式 什么情况通过style控制样式</h6><h6 id="不严格的说："><a href="#不严格的说：" class="headerlink" title="不严格的说："></a>不严格的说：</h6><p>如果样式很多 通过 直接控制类名 的方式加样式</p>
+<p>如果样式比较少 通过直接设置比较方便</p>
+<h6 id="严格来说："><a href="#严格来说：" class="headerlink" title="严格来说："></a>严格来说：</h6><p>从标准的角度讲 即使是样式比较少的时候 设置样式也要用类名 </p>
+<p>但是有一类情况 是无论如何也必须直接通过JS加的 那就是涉及到计算的时候</p>
+<h3 id="9-动态创建元素"><a href="#9-动态创建元素" class="headerlink" title="9.动态创建元素"></a>9.动态创建元素</h3><h5 id="9-1插入和移除节点"><a href="#9-1插入和移除节点" class="headerlink" title="9.1插入和移除节点"></a>9.1插入和移除节点</h5><p>在父元素中的最后追加子元素：father.appendChild(要追加的元素);</p>
+<p>在父元素中的某个子元素前面插入子元素：father.insertBefore(要插入的元素,插到这个元素的前面);</p>
+<p>从父元素中移除子元素：father.removeChild(要移除的子元素);</p>
+<h5 id="9-2动态创建结构"><a href="#9-2动态创建结构" class="headerlink" title="9.2动态创建结构"></a>9.2动态创建结构</h5><p>方式一：直接在文档中书写document.write(“内容”)</p>
+<p>方式二：改变元素对象内部的HTMLinnerHTML=”内容”</p>
+<p>方式三：创建或克隆节点并追加createElement()，cloneNode()通过这两种方法创建出来的元素只是保存在内存中，必须放到页面上才行!</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/09/面向对象/" rel="next" title="面向对象">
+                <i class="fa fa-chevron-left"></i> 面向对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/05/HTML5/" rel="prev" title="HTML5">
+                HTML5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/image/background.jpg"
+               alt="刘子轩" />
+          <p class="site-author-name" itemprop="name">刘子轩</p>
+           
+              <p class="site-description motion-element" itemprop="description">少壮不努力，老大徒伤悲</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="m18519760864@163.com" target="_blank" title="email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pipixuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/iissnan/answers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.</span> <span class="nav-text">1.基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-内容概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1.内容概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-结构概念"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2.结构概念</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-获取元素"><span class="nav-number">2.</span> <span class="nav-text">2.获取元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-设置属性"><span class="nav-number">3.</span> <span class="nav-text">3.设置属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-绑定事件"><span class="nav-number">4.</span> <span class="nav-text">4.绑定事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-this指向"><span class="nav-number">5.</span> <span class="nav-text">5.this指向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-常用属性"><span class="nav-number">6.</span> <span class="nav-text">6.常用属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-常用标签属性"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1.常用标签属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2内部文本属性"><span class="nav-number">6.0.2.</span> <span class="nav-text">6.2内部文本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#innerHTML"><span class="nav-number">6.0.2.1.</span> <span class="nav-text">innerHTML</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#innerText"><span class="nav-number">6.0.2.2.</span> <span class="nav-text">innerText</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#textContent"><span class="nav-number">6.0.2.3.</span> <span class="nav-text">textContent</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-3常用表单属性"><span class="nav-number">6.0.3.</span> <span class="nav-text">6.3常用表单属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-4-自定义属性"><span class="nav-number">6.1.</span> <span class="nav-text">6.4.自定义属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-节点"><span class="nav-number">7.</span> <span class="nav-text">7.节点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1节点类型"><span class="nav-number">7.0.1.</span> <span class="nav-text">7.1节点类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2节点层次"><span class="nav-number">7.0.2.</span> <span class="nav-text">7.2节点层次</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-样式属性"><span class="nav-number">8.</span> <span class="nav-text">8.样式属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#设置和获取样式"><span class="nav-number">8.0.0.1.</span> <span class="nav-text">设置和获取样式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#什么情况通过class控制样式-什么情况通过style控制样式"><span class="nav-number">8.0.0.2.</span> <span class="nav-text">什么情况通过class控制样式 什么情况通过style控制样式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#不严格的说："><span class="nav-number">8.0.0.3.</span> <span class="nav-text">不严格的说：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#严格来说："><span class="nav-number">8.0.0.4.</span> <span class="nav-text">严格来说：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-动态创建元素"><span class="nav-number">9.</span> <span class="nav-text">9.动态创建元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#9-1插入和移除节点"><span class="nav-number">9.0.1.</span> <span class="nav-text">9.1插入和移除节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-2动态创建结构"><span class="nav-number">9.0.2.</span> <span class="nav-text">9.2动态创建结构</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘子轩</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>好学</title>
-  
+  <subtitle>菜鸟独白</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-03T13:35:48.579Z</updated>
+  <updated>2017-04-04T14:29:33.423Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,19 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>移动web开发概念</title>
+    <link href="http://yoursite.com/2017/04/04/%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E6%A6%82%E5%BF%B5/"/>
+    <id>http://yoursite.com/2017/04/04/移动web开发概念/</id>
+    <published>2017-04-04T14:20:50.000Z</published>
+    <updated>2017-04-04T14:29:33.423Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="移动Web开发"><a href="#移动Web开发" class="headerlink" title="移动Web开发"></a>移动Web开发</h3><h6 id="移动web开发布局有两种形式："><a href="#移动web开发布局有两种形式：" class="headerlink" title="移动web开发布局有两种形式："></a>移动web开发布局有两种形式：</h6><p>1.自适应布局<br>2.响应式布局<br>这两者的区别的，个人理解：<br>自适应只是根据页面的大小，内容百分比变化。<br>响应式是根据不同分辨率的设备而进行页面适配设计<br>这里我们主要说响应式开发</p>
+<h5 id="响应式开发"><a href="#响应式开发" class="headerlink" title="响应式开发"></a>响应式开发</h5><h6 id="什么是响应式开发"><a href="#什么是响应式开发" class="headerlink" title="什么是响应式开发"></a>什么是响应式开发</h6><p>在移动互联日益成熟的时候，我们在桌面浏览器上开发的网页已经无法满足移动设备的阅读。<br>通常的做法是针对移动端单独做一套特定的版本。<br>但是如果终端越来越多那么你需要开发的版本就会越来越多（大屏移动设备普及）。<br>那么Ethan Marcotte在2010年5月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端。</p>
+<h6 id="响应式开发的工作原理"><a href="#响应式开发的工作原理" class="headerlink" title="响应式开发的工作原理"></a>响应式开发的工作原理</h6><p>　　　CSS3中的Media Query（媒介查询）<br>　　　通过查询screen的宽度来指定某个宽度区间的网页布局<br>　　　超小屏幕（移动设备）    768px以下<br>　　　小屏设备    768px-992px<br>　　　中等屏幕    992px-1200px<br>　　　宽屏设备    1200px以上<br>响应式开发的前景<br>　　　现在的移动设备屏幕越来越大。<br>　　　越来越多的设计师也采用了这种设计。<br>　　　在新建站的一些网站现在普遍采用的响应式开发。<br>　　　那么在前端开发当中也是一项必备的技能。
+　　　</p>
+<h5 id="移动Web的开发类型："><a href="#移动Web的开发类型：" class="headerlink" title="移动Web的开发类型："></a>移动Web的开发类型：</h5><p>Native App（原生APP)：也就是完全使用移动设备系统语言写的客户端，iPhone iPad就是纯Object-C，安卓就是纯JAVA, 就是用户看到的界面啦体验到的交互啦都是原生的。这是性能最棒的开发方式，但灵活性就没下面的好<br>Web App, 这个就是在移动浏览器里打开的，纯HTML+CSS+JS，说白了就是个网页，在浏览器里打开的页面。。。<br>Hybrid App(混合App)： 我觉得这个更为合适一些。实际上是使用原生写了一个容器，然后使用HTML+CSS+JS来实现用户界面和交互。</p>
+<p>　　　
+　　　</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;移动Web开发&quot;&gt;&lt;a href=&quot;#移动Web开发&quot; class=&quot;headerlink&quot; title=&quot;移动Web开发&quot;&gt;&lt;/a&gt;移动Web开发&lt;/h3&gt;&lt;h6 id=&quot;移动web开发布局有两种形式：&quot;&gt;&lt;a href=&quot;#移动web开发布局有两种形式：&quot; c
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript 应用开发 ：理解模型与集合</title>
     <link href="http://yoursite.com/2017/04/01/JavaScript%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%9B%86%E5%90%88/"/>
     <id>http://yoursite.com/2017/04/01/JavaScript应用开发理解模型与集合/</id>
     <published>2017-04-01T15:10:21.000Z</published>
-    <updated>2017-04-03T13:35:48.579Z</updated>
+    <updated>2017-04-04T06:20:24.485Z</updated>
     
-    <content type="html"><![CDATA[<p>在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更好的理解。所以，我们接下来会分成几天，把这个小应用的功能，分成几个部分，介绍每个小功能的细节。跟着这篇文章，或者 《 Backbone 应用实例 》 这个课程，动手练习一下。效果会非常好。</p>
-<p>在文章里面，我会把需要的代码粘出来，不过我建议你不要直接去复制跟粘贴。每一个目录，每一个文件，每一行代码，最好可以亲自动手去做出来。这期间我们也会不断的回到浏览器上去测试，这样你能更好的理解，每个步骤的作用。每一个动作，都要动手去试一下。</p>
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>在开始之前，最好可以了解一点 JavaScript，jQuery，还有 Backbone 。不过，不懂也没关系，跟着这个练习去实践，不懂的地方，可以再单独去解决一下。我会在练习中提到，代码的具体的意思是什么。</p>
-<p>要做的这个小应用，可以管理任务列表，我们需要给应用程序一个结构，也就是把应用分成几个部分，在不同的部分里面，去撰写不同的代码，这样会更容易维护一些。提供这个结构可以使用 Backbone 这个类库。在 《 基于 MVC 的 JavaScript Web 富应用开发 》</p>
-<p>这本书里介绍了这款优秀的类库。它可以跟 jQuery 还有 Underscore 很好的结合到一块儿使用，在这个应用实例里面会用到这几样东西。</p>
-<p>下面，我们先去创建应用需要的目录和文件结构。</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。</p>
+    <content type="html"><![CDATA[<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。</p>
 <p>js 目录里面是应用的主要的代码，这个目录里面，按照功能又分别创建了几个目录，Models 里面是应用的模型，Collections 里面是集合，Views 里面是视图，Routers 里面是路由器。在 js 根目录下的 app.js ，这个文件里会存储启动应用需要的一点代码。这些东西在后面，我们会一点一点去添加。</p>
 <p>lib 这个目录里面是应用需要的各种类库，jQuery，Underscore，Backbone，另外还有一个 Backbone 的小插件，backbone.localStorage.js。这个插件的作用就是，会用浏览器的 Local Storage 来存储数据。用 bing.com 或 google.com 去搜索一下这些东西，然后把它们下载下来，放到 lib 这个目录的下面。</p>
 <p>assets 里面是应用需要的一点资源，一个样式表，还有一张背景图片。在这篇文章的附件里面，你可以下载到这两个资源。</p>
@@ -86,7 +105,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;在 《 Backbone 应用实例 》 这个课程里面，我们会一起用 JavaScript 做一个小应用，它可以管理任务列表，应用可以创建新任务，编辑还有删除任务等等。这个实例非常好的演示了使用 JavaScript 来开发富应用，它也能让你对 JavaScript 有一个更
+      &lt;h3 id=&quot;目录结构&quot;&gt;&lt;a href=&quot;#目录结构&quot; class=&quot;headerlink&quot; title=&quot;目录结构&quot;&gt;&lt;/a&gt;目录结构&lt;/h3&gt;&lt;p&gt;根据下面的这个树形结构去创建对应的目录还有文件。应用只有一个页面，就是 index.html ，它是应用的主页。&lt;/p&gt;
+&lt;
     
     </summary>
     
@@ -94,26 +114,302 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/04/01/hello-world/"/>
-    <id>http://yoursite.com/2017/04/01/hello-world/</id>
-    <published>2017-04-01T14:59:42.763Z</published>
-    <updated>2017-04-01T14:59:42.764Z</updated>
+    <title>HTML5</title>
+    <link href="http://yoursite.com/2017/03/05/HTML5/"/>
+    <id>http://yoursite.com/2017/03/05/HTML5/</id>
+    <published>2017-03-05T15:10:21.000Z</published>
+    <updated>2017-04-04T11:27:16.720Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>认识HTML5　HTML5并不仅仅只是做为HTML标记语言的一个最新版本，更重要的是它制定了Web应用开发的一系列标准，成为第一个将Web做为应用开发平台的HTML语言。</p>
+<p>HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标签等，可以帮助开发者创建富互联网应用，还提供了一些Javascript API，如地理定位、重力感应、硬件访问等，可以在浏览器内实现类原生应用，甚至结合Canvas我们可开发网页版游戏。</p>
+<h6 id="我们日常讨论的H5其实指的是一个范称，它是由HTML5-CSS3-Javascript等技术组合而成的一个应用开发平台。"><a href="#我们日常讨论的H5其实指的是一个范称，它是由HTML5-CSS3-Javascript等技术组合而成的一个应用开发平台。" class="headerlink" title="我们日常讨论的H5其实指的是一个范称，它是由HTML5 + CSS3 + Javascript等技术组合而成的一个应用开发平台。"></a>我们日常讨论的H5其实指的是一个范称，它是由HTML5 + CSS3 + Javascript等技术组合而成的一个应用开发平台。</h6><h5 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h5><p>随着Web技术的更新，HTML也先后经历了HTML 4.01、XHTML 1.0、HTML5几个重要的版本，在版本的演变过程中新增或废弃了一些属性，同时对语法规范也做了一些调整，为了能够保证浏览器可以兼容不同版本语法规范的，我们可以使用&lt;!DOCTYPE&gt;指示浏览器应该如何处理。</p>
+<p>HTML5在语法规范上也做了比较大的调整，去除了许多冗余的内容，书写规则更加简洁、清晰。</p>
+<p>见代码实例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　　特点：</div><div class="line">　　　1、更简洁</div><div class="line">　　　2、更宽松</div><div class="line">　　　实际开发中应规范书写，不建议太随意 ！</div><div class="line">　　　现在基本所有网站都采用了HTML5的&lt;!DOCTYPE&gt;</div><div class="line">　　　W3C验证地址</div><div class="line">　　　https://validator.w3.org/</div></pre></td></tr></table></figure></p>
+<h3 id="2-语义标签"><a href="#2-语义标签" class="headerlink" title="2.语义标签"></a>2.语义标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">语义标签对于我们并不陌生，如&lt;p&gt;表示一个段落、</div><div class="line">&lt;ul&gt;表示一个无序列表&lt;h1&gt; 到 &lt;h6&gt;表示一系列标题等，在此基础上HTML5增加了大量更有</div><div class="line">意义的语义标签，更有利于搜索引擎或辅助设备来理解HTML页面内容。</div><div class="line">传统的做法我们或许通过增加类名如class=<span class="string">"header"</span>、class=<span class="string">"footer"</span>，</div><div class="line">使HTML页面具有语义性，但是不具有通用性。</div><div class="line"></div><div class="line">HTML5则是通过新增语义标签的形式来解决这个问题，</div><div class="line">例如&lt;header&gt;&lt;/header&gt;、&lt;footer&gt;&lt;/footer&gt;等，这样就可以使其具有通用性。</div></pre></td></tr></table></figure>
+<h5 id="2-1-常用新语义标签"><a href="#2-1-常用新语义标签" class="headerlink" title="2.1.常用新语义标签"></a>2.1.常用新语义标签</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">　　　&lt;nav&gt; 表示导航</div><div class="line">　　　&lt;header&gt; 表示页眉</div><div class="line">　　　&lt;footer&gt; 表示页脚</div><div class="line">　　　&lt;section&gt; 表示区块</div><div class="line">　　　&lt;article&gt; 表示文章 如文章、评论、帖子、博客</div><div class="line">　　　&lt;aside&gt; 表示侧边栏 如文章的侧栏</div><div class="line">　　　&lt;figure&gt; 表示媒介内容分组 与 ul &gt; li 做个比较</div><div class="line">　　　&lt;mark&gt; 表示标记 (带用“UI”，不怎么用，可以重写样式)</div><div class="line">　　　&lt;progress&gt; 表示进度 (带用“UI”，不怎么用，不可重写样式)</div><div class="line">　　　&lt;time&gt; 表示日期</div><div class="line">　　　&lt;hgroup&gt; 标题列表 (据说已废弃)</div><div class="line">　　　&lt;details&gt;</div><div class="line">　　　&lt;bdi&gt;</div><div class="line">　　　&lt;<span class="built_in">command</span>&gt;</div><div class="line">　　　&lt;summary&gt;</div><div class="line">　　　&lt;rp&gt;</div><div class="line">　　　&lt;rt&gt;</div><div class="line">　　　&lt;ruby&gt;</div></pre></td></tr></table></figure>
+<p>本质上新语义标签与<div>、<span>没有区别，只是其具有表意性，使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，可以理解成<div class="nav"> 相当于 <nav>。不要好奇，它只是一个标签！</nav></div></span></div></p>
+<p>尽量避免全局使用header、footer、aside等语义标签。</p>
+<h5 id="2-2兼容处理"><a href="#2-2兼容处理" class="headerlink" title="2.2兼容处理"></a>2.2兼容处理</h5><p>在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用，但是在IE9版本以下，并不能正常解析这些新标签，但是却可以识别通过document.createElement(‘tagName’)创建的自定义标签，于是我们的解决方案就是将HTML5的新标签全部通过document.createElement(‘tagName’)来创建一遍，这样IE低版本也能正常解析HTML5新标签了，在实际开发中我们更多采用的是通过检测IE浏览器的版本来加载第三方的一个JS库来解决兼容问题。</p>
+<h3 id="3-表单"><a href="#3-表单" class="headerlink" title="3.表单"></a>3.表单</h3><p>　　　伴随着互联网富应用以及移动开发的兴起，传统的Web表单已经越来越不能满足开发的需求，所以HTML5在Web表单方向也做了很大的改进，如拾色器、日期/时间组件等，使表单处理更加高效。
+　　　</p>
+<p>　　　此章节学习目的，了解HTML5表单的新增的特性，以及PC和移动设备间的差异，其兼容性较差。</p>
+<h5 id="3-1输入类型"><a href="#3-1输入类型" class="headerlink" title="3.1输入类型"></a>3.1输入类型</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">　　　email 输入email格式</div><div class="line">　　　tel 手机号码</div><div class="line">　　　url 只能输入url格式</div><div class="line">　　　number 只能输入数字</div><div class="line">　　　search 搜索框</div><div class="line">　　　range 范围</div><div class="line">　　　color 拾色器</div><div class="line">　　　time	时间</div><div class="line">　　　date 日期 不是绝对的</div><div class="line">　　　datetime 时间日期</div><div class="line">　　　month 月份</div><div class="line">　　　week 星期</div></pre></td></tr></table></figure>
+<h6 id="部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。"><a href="#部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。" class="headerlink" title="部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。"></a>部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</h6><p>　　　</p>
+<h5 id="3-2表单元素（标签）"><a href="#3-2表单元素（标签）" class="headerlink" title="3.2表单元素（标签）"></a>3.2表单元素（标签）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;datalist&gt; 下拉选项，使用中文时要注意</div><div class="line">&lt;keygen&gt; 生成加密字符串</div><div class="line">&lt;output&gt; 不可当做数据提交</div><div class="line">&lt;meter&gt; 表示度量器，不建议用作进度条</div></pre></td></tr></table></figure>
+<h5 id="3-3表单属性"><a href="#3-3表单属性" class="headerlink" title="3.3表单属性"></a>3.3表单属性</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">　　　placeholder 占位符</div><div class="line">　　　autofocus 获取焦点</div><div class="line">　　　multiple 文件上传多选或多个邮箱地址</div><div class="line">　　　autocomplete 自动完成，用于form元素，也可用于部分input，默认值on</div><div class="line">　　　form 指定表单项属于哪个form，处理复杂表单时会需要</div><div class="line">　　　novalidate 关闭验证，可用于&lt;form&gt;标签，（只适应用form）</div><div class="line">　　　required 验证条件，必填项</div><div class="line">　　　pattern 正则表达式 自定义验证规则</div><div class="line">　　　表单重写没有提及，自行验证，共包含</div><div class="line">　　　formaction、formenctype、formtarget、formmethod、formnovalidate</div><div class="line">　　　应用于提交按钮上，如：&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> formaction=<span class="string">"xxx.php"</span>&gt;</div></pre></td></tr></table></figure>
+<h5 id="3-4表单事件"><a href="#3-4表单事件" class="headerlink" title="3.4表单事件"></a>3.4表单事件</h5><p>　　　oninput 用户输入内容时触发，可用于移动端输入字数统计<br>　　　<br>oninvalid 验证不通过时触发</p>
+<h3 id="4-多媒体"><a href="#4-多媒体" class="headerlink" title="4.多媒体"></a>4.多媒体</h3><p>　　　在HTML5之前，在网页上播放音频/视频的通用方法是利用Flash来播放，但是大多情况下，并非所有用户的浏览器都安装了Flash插件，由此使得处理音频/视频播放变的非常复杂，并且移动设备的浏览器并不支持Flash插件。</p>
+<h6 id="此章节学习目的，了解如何通过HTML5播放音频-视频，以及针对不同浏览器所支持的格式，做多浏览器兼容处理。"><a href="#此章节学习目的，了解如何通过HTML5播放音频-视频，以及针对不同浏览器所支持的格式，做多浏览器兼容处理。" class="headerlink" title="此章节学习目的，了解如何通过HTML5播放音频/视频，以及针对不同浏览器所支持的格式，做多浏览器兼容处理。"></a>此章节学习目的，了解如何通过HTML5播放音频/视频，以及针对不同浏览器所支持的格式，做多浏览器兼容处理。</h6><h5 id="4-1音频"><a href="#4-1音频" class="headerlink" title="4.1音频"></a>4.1音频</h5><h6 id="HTML5通过audio标签来解决音频播放的问题。并且可以通过附加属性可以更友好控制音频的播放，如："><a href="#HTML5通过audio标签来解决音频播放的问题。并且可以通过附加属性可以更友好控制音频的播放，如：" class="headerlink" title="HTML5通过audio标签来解决音频播放的问题。并且可以通过附加属性可以更友好控制音频的播放，如："></a>HTML5通过audio标签来解决音频播放的问题。并且可以通过附加属性可以更友好控制音频的播放，如：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">autoplay 自动播放</div><div class="line">controls 是否显不默认播放控件</div><div class="line">loop 循环播放</div><div class="line">preload 预加载 同时设置autoplay时些属性失效</div></pre></td></tr></table></figure>
+<h5 id="4-2视频"><a href="#4-2视频" class="headerlink" title="4.2视频"></a>4.2视频</h5><h6 id="HTML5通过video标签来解决音频播放的问题。"><a href="#HTML5通过video标签来解决音频播放的问题。" class="headerlink" title="HTML5通过video标签来解决音频播放的问题。"></a>HTML5通过video标签来解决音频播放的问题。</h6><p>同音频播放一样，video使用也相当简单同样，通过附加属性可以更友好的控制视频的播放<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">autoplay 自动播放</div><div class="line">controls 是否显示默认播放控件</div><div class="line">loop 循环播放</div><div class="line">preload 预加载，同时设置了autoplay，此属性将失效</div><div class="line">width 设置播放窗口宽度</div><div class="line">height 设置播放窗口的高度</div></pre></td></tr></table></figure></p>
+<p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的Video.js  第三方的视频插件<br>多浏览器支持的方案，如下图</p>
+<h3 id="5-微数据"><a href="#5-微数据" class="headerlink" title="5.微数据"></a>5.微数据</h3><p>1、微数据<br><a href="http://kayosite.com/html5-microdata.html可以理解成新语义标签的一种补充" target="_blank" rel="external">http://kayosite.com/html5-microdata.html可以理解成新语义标签的一种补充</a><br>2、ARIA<br><a href="http://www.zhangxinxu.com/wordpress/2012/03/wai-aria-%E6%97%A0%E9%9A%9C%E7%A2%8D%E9%98%85%E8%AF%BB/#ariaRole" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2012/03/wai-aria-%E6%97%A0%E9%9A%9C%E7%A2%8D%E9%98%85%E8%AF%BB/#ariaRole</a>
+　　　</p>
+<h3 id="6-DOM扩展"><a href="#6-DOM扩展" class="headerlink" title="6.DOM扩展"></a>6.DOM扩展</h3><h5 id="6-1获取元素"><a href="#6-1获取元素" class="headerlink" title="6.1获取元素"></a>6.1获取元素</h5><p>　　　1、document.getElementsByClassName (‘class’) 通过类名获取元素，以类数组形式存在。<br>　　　2、document.querySelector(‘selector’) 通过CSS选择器获取元素，符合匹配条件的第1个元素。<br>　　　3、document.querySelectorAll(‘selector’) 通过CSS选择器获取元素，以类数组形式存在。</p>
+<h5 id="6-2类名操作"><a href="#6-2类名操作" class="headerlink" title="6.2类名操作"></a>6.2类名操作</h5><p>　　　1、Node.classList.add(‘class’) 添加class</p>
+<p>　　　2、Node.classList.remove(‘class’) 移除class</p>
+<p>　　　3、Node.classList.toggle(‘class’) 切换class，有则移除，无则添加</p>
+<p>　　　4、Node.classList.contains(‘class’) 检测是否存在class</p>
+<p>　　　Node指一个有效的DOM节点，是一个通称。</p>
+<h5 id="6-3自定义属性"><a href="#6-3自定义属性" class="headerlink" title="6.3自定义属性"></a>6.3自定义属性</h5><p>在HTML5中我们可以自定义属性，其格式如下data-*=””，例如<br>data-info=”我是自定义属性”，通过Node.dataset[‘info’] 我们便可以获取到自定义的属性值。<br>Node.dataset是以对象形式存在的<br>当我们如下格式设置时，则需要以驼峰格式才能正确获取<br>data-my-name=”itcast”，获取Node.dataset[‘myName’]</p>
+<h3 id="7-新增API"><a href="#7-新增API" class="headerlink" title="7.新增API"></a>7.新增API</h3><h5 id="7-1拖拽"><a href="#7-1拖拽" class="headerlink" title="7.1拖拽"></a>7.1拖拽</h5><p>在HTML5的规范中，我们可以通过为元素增加draggable=”true”来设置此元素是否可以进行拖拽操作，其中图片、链接默认是开启的。
+　　　</p>
+<h6 id="7-1-1-拖拽元素"><a href="#7-1-1-拖拽元素" class="headerlink" title="7.1.1.拖拽元素"></a>7.1.1.拖拽元素</h6><p>　　　页面中设置了draggable=”true”属性的元素</p>
+<h6 id="7-1-2目标元素"><a href="#7-1-2目标元素" class="headerlink" title="7.1.2目标元素"></a>7.1.2目标元素</h6><p>　　　页面中任何一个元素都可以成为目标元素</p>
+<h6 id="7-1-2事件监听"><a href="#7-1-2事件监听" class="headerlink" title="7.1.2事件监听"></a>7.1.2事件监听</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">拖拽元素</div><div class="line">　　　ondrag 	7.1.3应用于拖拽元素，整个拖拽过程都会调用</div><div class="line">　　　ondragstart	应用于拖拽元素，当拖拽开始时调用</div><div class="line">　　　ondragleave	应用于拖拽元素，当鼠标离开拖拽元素时调用</div><div class="line">　　　ondragend	应用于拖拽元素，当拖拽结束时调用</div><div class="line">目标元素</div><div class="line">　　　ondragenter	应用于目标元素，当拖拽元素进入时调用</div><div class="line">　　　ondragover	应用于目标元素，当停留在目标元素上时调用</div><div class="line">　　　ondrop		应用于目标元素，当在目标元素上松开鼠标时调用</div><div class="line">　　　ondragleave	应用于目标元素，当鼠标离开目标元素时调用</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　　数据传递</div><div class="line">　　　ev.dataTransfer.setData() 设置数据</div><div class="line">　　　ev.dataTransfer.getData() 读取数据</div></pre></td></tr></table></figure>
+<h5 id="7-2-新增方法"><a href="#7-2-新增方法" class="headerlink" title="7.2.新增方法"></a>7.2.新增方法</h5><p>　　　1、pushState(data, title, url) 追加一条历史记录<br>　　　    data用于存储自定义数据，通常设为null<br>　　　    title网页标题，基本上没有被支持，一般设为空<br>　　　    url 以当前域为基础增加一条历史记录，不可跨域设置<br>　　　2、replaceState(data, title, url) 与pushState()基本相同，不同之处在于replaceState()，只是替换当前url，不会增加/减少历史记录。<br>　　　Single Page Application单页面应用</p>
+<h5 id="7-3-事件监听"><a href="#7-3-事件监听" class="headerlink" title="7.3.事件监听"></a>7.3.事件监听</h5><p>　　　onpopstate事件，当前进或后退时则触发，通过事件对象ev.state可以读取到存储的数据，监听是要给window。</p>
+<h5 id="7-4-地理定位"><a href="#7-4-地理定位" class="headerlink" title="7.4.地理定位"></a>7.4.地理定位</h5><p>　　　在HTML规范中，增加了获取用户地理信息的API，这样使得我们可以基于用户位置开发互联网应用，即基于位置服务 (Location Base Service)</p>
+<h6 id="获取地理信息方式"><a href="#获取地理信息方式" class="headerlink" title="获取地理信息方式"></a>获取地理信息方式</h6><p>　　　1、IP地址<br>　　　2、三维坐标<br>　　　    GPS（Global Positioning System，全球定位系统）<br>　　　    Wi-Fi<br>　　　    手机信号<br>　　　3、用户自定义数据</p>
+<h5 id="7-5-隐私"><a href="#7-5-隐私" class="headerlink" title="7.5.隐私"></a>7.5.隐私</h5><p>　　　HTML5 Geolocation 规范提供了一套保护用户隐私的机制。必须先得到用户明确许可，才能获取用户的位置信息。</p>
+<h5 id="7-6API详解"><a href="#7-6API详解" class="headerlink" title="7.6API详解"></a>7.6API详解</h5><p>　　　navigator.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息<br>　　　navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息<br>　　　1、当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">position.coords.latitude纬度</div><div class="line">position.coords.longitude经度</div><div class="line">position.coords.accuracy精度</div><div class="line">position.coords.altitude海拔高度</div></pre></td></tr></table></figure></p>
+<p>2、当获取地理信息失败后，会调用errorCallback，并返回错误信息error<br>3、可选参数 options 对象可以调整位置信息数据收集方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a) <span class="built_in">enable</span>HighAccuracy 高精度模式</div><div class="line">b) timeout 超时设置，单位为ms</div><div class="line">c) maximumAge表示浏览器重新获取位置信息的时间间隔，单位为ms</div></pre></td></tr></table></figure></p>
+<h5 id="7-7-Web存储"><a href="#7-7-Web存储" class="headerlink" title="7.7.Web存储"></a>7.7.Web存储</h5><p>　　　随着互联网的快速发展，基于网页的应用越来越普遍，同时也变的越来越复杂，为了满足各种各样的需求，会经常性在本地存储大量的数据，传统方式我们以document.cookie来进行存储的，但是由于其存储大小只有4k左右，并且解析也相当的复杂，给开发带来诸多不便，HTML5规范则提出解决方案。</p>
+<h6 id="7-7-1特性"><a href="#7-7-1特性" class="headerlink" title="7.7.1特性"></a>7.7.1特性</h6><p>　　　1、设置、读取方便<br>　　　2、容量较大，sessionStorage约5M、localStorage约20M<br>　　　3、只能存储字符串，可以将对象JSON.stringify() 编码后存储</p>
+<h6 id="7-7-2window-sessionStorage"><a href="#7-7-2window-sessionStorage" class="headerlink" title="7.7.2window.sessionStorage"></a>7.7.2window.sessionStorage</h6><p>　　　1、生命周期为关闭浏览器窗口<br>　　　2、在同一个窗口下数据可以共享</p>
+<h6 id="7-7-3window-localStorage"><a href="#7-7-3window-localStorage" class="headerlink" title="7.7.3window.localStorage"></a>7.7.3window.localStorage</h6><p>　　　1、永久生效，除非手动删除<br>　　　2、可以多窗口共享</p>
+<h6 id="7-7-4方法详解"><a href="#7-7-4方法详解" class="headerlink" title="7.7.4方法详解"></a>7.7.4方法详解</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span>Item(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
+<h6 id="7-7-5其它"><a href="#7-7-5其它" class="headerlink" title="7.7.5其它"></a>7.7.5其它</h6><p>　　　WebSQL、IndexDB</p>
+<h5 id="7-8全屏"><a href="#7-8全屏" class="headerlink" title="7.8全屏"></a>7.8全屏</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">HTML5规范允许用户自定义网页上任一元素全屏显示。</div><div class="line">requestFullScreen() 开启全屏显示</div><div class="line">cancelFullScreen() 关闭全屏显示</div><div class="line">不同浏览器需要添加前缀如：</div><div class="line">webkitRequestFullScreen、mozRequestFullScreen</div><div class="line">webkitCancelFullScreen、mozCancelFullScreen</div><div class="line">规范允许所有元素可以取全屏，</div><div class="line">但实际测试结果关闭全屏只能添加到document元素上</div></pre></td></tr></table></figure>
+<p>　　　通过document.fullScreen检测当前是否处于全屏状态<br>　　　不同浏览器需要添加前缀<br>　　　document.webkitIsFullScreen、document.mozFullScreen<br>　　　全屏伪类<br>　　　:full-screen .box {}、:-webkit-full-screen {}、:moz-full-screen {}</p>
+<h5 id="7-9-网络状态"><a href="#7-9-网络状态" class="headerlink" title="7.9.网络状态"></a>7.9.网络状态</h5><p>　　　我们可以通过window. navigator.onLine来检测，用户当前的网络状况，返回一个布尔值<br>　　　addEventListener 进行绑定online用户网络连接时被调用<br>　　addEventListener 进行绑定.offline用户网络断开时被调用<br>　　　事件是给window绑订的</p>
+<h6 id="7-9-1应用缓存"><a href="#7-9-1应用缓存" class="headerlink" title="7.9.1应用缓存"></a>7.9.1应用缓存</h6><p>　　　HTML5中我们可以轻松的构建一个离线（无网络状态）应用，只需要创建一个cache manifest文件。</p>
+<h6 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1、可配置需要缓存的资源</div><div class="line">2、网络无连接应用仍可用</div><div class="line">3、本地读取缓存资源，提升访问速度，增强用户体验</div><div class="line">4、减少请求，缓解服务器负担</div></pre></td></tr></table></figure>
+<h6 id="7-9-2-缓存清单"><a href="#7-9-2-缓存清单" class="headerlink" title="7.9.2.缓存清单"></a>7.9.2.缓存清单</h6><p>　　　一个普通文本文件，其中列出了浏览器应缓存以供离线访问的资源，推荐使用.appcache为后缀名，添加MIME类型<br>　　　AddType text/cache-manifest .appcache<br>　　　例如我们创建了一个名为demo.appcache的文件，然后在需要应用缓存在页面的根元素(html)添加属性manifest=”demo.appcache”，路径要保证正确。</p>
+<h6 id="7-9-3-文件读取"><a href="#7-9-3-文件读取" class="headerlink" title="7.9.3.文件读取"></a>7.9.3.文件读取</h6><p>　　　通过FileReader对象我们可以读取本地存储的文件，可以使用 File 对象来指定所要读取的文件或数据。其中File对象可以是来自用户在一个 input 元素上选择文件后返回的FileList 对象，也可以来自由拖放操作生成的  DataTransfer</p>
+<h6 id="7-9-4FileList对象"><a href="#7-9-4FileList对象" class="headerlink" title="7.9.4FileList对象"></a>7.9.4FileList对象</h6><p>　　　由于HTML5中我们可以通过为表单元素添加multiple属性，因此我们通过input上传文件后得到的是一个FileList对象（伪数组形式）。</p>
+<h6 id="7-9-5FileReader对象"><a href="#7-9-5FileReader对象" class="headerlink" title="7.9.5FileReader对象"></a>7.9.5FileReader对象</h6><p>　　　HTML5新增内建对象，可以读取本地文件内容。<br>　　　var reader = new FileReader; 可以实例化一个对象</p>
+<h6 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h6><p>　　　1、readAsDataURL() 以DataURL形式读取文件</p>
+<h6 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h6><p>　　　onload 当文读取完成时调用</p>
+<h6 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h6><p>　　　result 文件读取结果<br>　　　参考资料<br>　　　<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#toc" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#toc</a></p>
+<h5 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h5><p>　　　方法：load()、play()、pause()<br>　　　属性：currentSrc、currentTime、duration<br>　　　事件：<br>　　　参考文档:<br>　　　<a href="http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp" target="_blank" rel="external">http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h3&gt;&lt;p&gt;认识HTML5　HTML5并不仅仅只是做为HTML标记语言的一个最新版本，更重要的是它制定了Web应用开发的一系列标准，成为
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>对象模型：DOM操作</title>
+    <link href="http://yoursite.com/2017/03/01/%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2017/03/01/对象模型/</id>
+    <published>2017-03-01T15:10:21.000Z</published>
+    <updated>2017-04-04T07:26:03.770Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h3><p>DOM Document Object Model 文档对象模型</p>
+<p>就是把HTML文档模型化，当作对象来处理</p>
+<p>DOM提供的一系列属性和方法可以视作一个工具箱，极大地方了我们对文档的处理。</p>
+<h5 id="1-1-内容概念"><a href="#1-1-内容概念" class="headerlink" title="1.1.内容概念"></a>1.1.内容概念</h5><p>文档(Document)：就是指HTML或者XML文件</p>
+<p>节点(Node)：HTML文档中的所有内容都可以称之为节点，常见的节点有</p>
+<p>元素节点 属性节点 文本节点 注释节点</p>
+<p>元素(Element)：HTML文档中的标签可以称为元素</p>
+<h5 id="1-2-结构概念"><a href="#1-2-结构概念" class="headerlink" title="1.2.结构概念"></a>1.2.结构概念</h5><p>父节点 当前节点的父级</p>
+<p>子节点 当前节点的子级</p>
+<p>兄弟节点 和当前节点同属一个父级的节点</p>
+<h3 id="2-获取元素"><a href="#2-获取元素" class="headerlink" title="2.获取元素"></a>2.获取元素</h3><p>getElementById：通过id寻找一个元素（找到的是一个元素对象） 该方法只能被document对象调用（同一个文档中id不能重复）</p>
+<p>getElementsByTagName：通过标签名寻找一类元素（找到的是由元素对象组成的伪数组）<br>即可以被document调用，又可以被元素对象调用，被元素对象调用时表示在该元素对象内部执行查找</p>
+<h3 id="3-设置属性"><a href="#3-设置属性" class="headerlink" title="3.设置属性"></a>3.设置属性</h3><p>元素对象.属性名 = “属性值”等价于&lt;标签 属性名=”属性值”&gt;</p>
+<h3 id="4-绑定事件"><a href="#4-绑定事件" class="headerlink" title="4.绑定事件"></a>4.绑定事件</h3><p>事件三要素</p>
+<p>事件源.事件 = function(){ 事件处理程序 }等价于&lt;标签 事件=”事件处理程序”&gt;</p>
+<h3 id="5-this指向"><a href="#5-this指向" class="headerlink" title="5.this指向"></a>5.this指向</h3><p>1.纯属的函数调用：this指向全局对象</p>
+<p>2.作为对象方法调用：this指向这个上级对象</p>
+<p>3.作为构造函数调用： this指向这个新对象</p>
+<p>4.app调用（改变this的指向）：它的第一个参数就是表示改变后的调用这个函数的对象，因此this指向的就是第一个参数<br>当参数为空时，默认调用全局对象</p>
+<h3 id="6-常用属性"><a href="#6-常用属性" class="headerlink" title="6.常用属性"></a>6.常用属性</h3><h5 id="6-1-常用标签属性"><a href="#6-1-常用标签属性" class="headerlink" title="6.1.常用标签属性"></a>6.1.常用标签属性</h5><p>DOM对象的属性和HTML的标签属性几乎是一致的，常用的有src、title、className、href和style<br>其中className对应就是标签的class属性，但是由于class在JS中是关键字，所以变成了className</p>
+<h5 id="6-2内部文本属性"><a href="#6-2内部文本属性" class="headerlink" title="6.2内部文本属性"></a>6.2内部文本属性</h5><h6 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h6><p>获取和设置标签中的内容，设置的内容会当作节点对象被解析到DOM树上</p>
+<h6 id="innerText"><a href="#innerText" class="headerlink" title="innerText"></a>innerText</h6><p>获取和设置标签中的内容，设置的内容会被当作普通文本（有兼容性问题，旧版ff不支持）</p>
+<h6 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h6><p>获取和设置标签中的内容，设置的内容会被当作普通文本（有兼容性问题，旧版IE不支持）</p>
+<h5 id="6-3常用表单属性"><a href="#6-3常用表单属性" class="headerlink" title="6.3常用表单属性"></a>6.3常用表单属性</h5><p>常见的表单元素属性有：</p>
+<p>type、value、checked、selected、disabled</p>
+<p>type可以设置input元素的类型</p>
+<p>value可以设置input元素的值</p>
+<p>checked可以设置input元素是否选中</p>
+<p>selected 可以设置下拉列表select中的option是否被选中</p>
+<p>disabled 可以设置input元素是否被禁用</p>
+<p>文本框获取焦点和失去焦点：<br>获取焦点事件是onfocus 失去焦点事件是onblur  (不是所有的标签都有这个事件) 更多详细内容可以查阅w3School</p>
+<h4 id="6-4-自定义属性"><a href="#6-4-自定义属性" class="headerlink" title="6.4.自定义属性"></a>6.4.自定义属性</h4><p>对象的自定义属性：<br>可以像给对象设置属性一样，给元素对象设置属性</p>
+<p>标签的自定义属性：<br>可以通过getAttribute()和setAttribute()设置和获取标签属性，通过removeAttribute()移除标签的属性<br>正常浏览器中 HTML中有规定的属性 两种方式才可以相互设置和获取</p>
+<p>总之用setAttribute设置的就用getAttribute获取 用对象的自定义属性设置的就用对象的自定义属性获取 以免出问题</p>
+<h3 id="7-节点"><a href="#7-节点" class="headerlink" title="7.节点"></a>7.节点</h3><h5 id="7-1节点类型"><a href="#7-1节点类型" class="headerlink" title="7.1节点类型"></a>7.1节点类型</h5><p>node.nodeType</p>
+<p>1表示元素节点 2表示属性节点 3表示文本节点</p>
+<h5 id="7-2节点层次"><a href="#7-2节点层次" class="headerlink" title="7.2节点层次"></a>7.2节点层次</h5><p>所有获取节点相关属性都没有兼容性问题</p>
+<p>childNodes     //子节点 </p>
+<p>children        //子元素<br>虽然不是早期DOM标准中的方法，但是所有浏览器都支持</p>
+<p>nextSibling //下一个兄弟节点</p>
+<p>nextElementSibling //下一个兄弟元素 有兼容性问题</p>
+<p>previousSibling//上一个兄弟节点</p>
+<p>previousElementSibling //上一个兄弟元素 有兼容性问题</p>
+<p>firstChild //第一个节点</p>
+<p>firstElementChild //第一个子元素 有兼容性问题</p>
+<p>lastChild //最后一个子节点</p>
+<p>lastElementChild //最后一个子元素 有兼容性问题</p>
+<p>parentNode //父节点 （一定是元素节点，所以无需处理）</p>
+<h3 id="8-样式属性"><a href="#8-样式属性" class="headerlink" title="8.样式属性"></a>8.样式属性</h3><p>style属性是对象，style对象的属性是字符串<br>style只能获取和设置行内样式</p>
+<p>DOM对象中style的属性和标签中style内的值几乎一样<br>只是带有 - 的属性名较为特殊（如background-color变成了backgroundColor），因为在JS中 - 不能作为标识符</p>
+<h6 id="设置和获取样式"><a href="#设置和获取样式" class="headerlink" title="设置和获取样式"></a>设置和获取样式</h6><p>通过对象的style属性只能设置和获取行内样式</p>
+<p>获取样式的时候 如果行内没有该样式 输出空字符串</p>
+<p>设置样式的时候 赋的值是一个字符串 如果这个属性有单位 一定要节点加单位</p>
+<h6 id="什么情况通过class控制样式-什么情况通过style控制样式"><a href="#什么情况通过class控制样式-什么情况通过style控制样式" class="headerlink" title="什么情况通过class控制样式 什么情况通过style控制样式"></a>什么情况通过class控制样式 什么情况通过style控制样式</h6><h6 id="不严格的说："><a href="#不严格的说：" class="headerlink" title="不严格的说："></a>不严格的说：</h6><p>如果样式很多 通过 直接控制类名 的方式加样式</p>
+<p>如果样式比较少 通过直接设置比较方便</p>
+<h6 id="严格来说："><a href="#严格来说：" class="headerlink" title="严格来说："></a>严格来说：</h6><p>从标准的角度讲 即使是样式比较少的时候 设置样式也要用类名 </p>
+<p>但是有一类情况 是无论如何也必须直接通过JS加的 那就是涉及到计算的时候</p>
+<h3 id="9-动态创建元素"><a href="#9-动态创建元素" class="headerlink" title="9.动态创建元素"></a>9.动态创建元素</h3><h5 id="9-1插入和移除节点"><a href="#9-1插入和移除节点" class="headerlink" title="9.1插入和移除节点"></a>9.1插入和移除节点</h5><p>在父元素中的最后追加子元素：father.appendChild(要追加的元素);</p>
+<p>在父元素中的某个子元素前面插入子元素：father.insertBefore(要插入的元素,插到这个元素的前面);</p>
+<p>从父元素中移除子元素：father.removeChild(要移除的子元素);</p>
+<h5 id="9-2动态创建结构"><a href="#9-2动态创建结构" class="headerlink" title="9.2动态创建结构"></a>9.2动态创建结构</h5><p>方式一：直接在文档中书写document.write(“内容”)</p>
+<p>方式二：改变元素对象内部的HTMLinnerHTML=”内容”</p>
+<p>方式三：创建或克隆节点并追加createElement()，cloneNode()通过这两种方法创建出来的元素只是保存在内存中，必须放到页面上才行!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-基本概念&quot;&gt;&lt;a href=&quot;#1-基本概念&quot; class=&quot;headerlink&quot; title=&quot;1.基本概念&quot;&gt;&lt;/a&gt;1.基本概念&lt;/h3&gt;&lt;p&gt;DOM Document Object Model 文档对象模型&lt;/p&gt;
+&lt;p&gt;就是把HTML文档模型化，当
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象</title>
+    <link href="http://yoursite.com/2017/02/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2017/02/09/面向对象/</id>
+    <published>2017-02-09T15:10:21.000Z</published>
+    <updated>2017-04-04T08:51:15.714Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h5 id="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"><a href="#对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据" class="headerlink" title="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"></a>对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据</h5><p>举个例子比如：<br><a href="http://www.codecombat.cn" target="_blank" rel="external">http://www.codecombat.cn</a></p>
+<h6 id="面向对象与基于对象的区别"><a href="#面向对象与基于对象的区别" class="headerlink" title="面向对象与基于对象的区别"></a>面向对象与基于对象的区别</h6><p>面向对象：</p>
+<p>可以创建自定义的类型、很好的支持继承和多态。</p>
+<p>面向对象的语言c++/java/c#…</p>
+<p>面向对象的特征：封装、继承、多态</p>
+<p>万物皆对象,世间的一切事物都可以用对象来描述</p>
+<p>基于对象：<br>无法创建自定义的类型、不能很好的支持继承和多态。基于对象的语言JavaScript但是:js可以模拟面向对象,本身不具备面向对象的特征。</p>
+<h5 id="JavaScript中的对象"><a href="#JavaScript中的对象" class="headerlink" title="JavaScript中的对象"></a>JavaScript中的对象</h5><p>其属性可以包含基本值、对象或函数。对象就是一组没有顺序的值。我们可以把JavaScript中的对象想象成键值对，其中值可以是数据和函数。</p>
+<p>对象的行为和特征</p>
+<p>特征—属性</p>
+<p>行为—方法</p>
+<p>学生的行为:吃饭,睡觉,学习…</p>
+<p>学生的特征:名字,性别,身高,体重…</p>
+<h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5><p>使用关键字:new Object();此时在内存中开辟了一块空间,并且创建了一个没有任何属性和方法的对象。</p>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p>new Object()</p>
+<p>new后面调用方法，调用的方法，我们称为构造函数。Object() 我们把他视为一个构造函数，构造函数的本质就是一个函数，只不过构造函数的目的是为了创建新对象，为新对象进行初始化(设置对象的属性)构造函数解释:构建一个对象并且返回。</p>
+<p>new Object()开辟了空间，返回新的对象…</p>
+<p>函数和方法的区别:</p>
+<p>函数:直接调用的</p>
+<p>方法:对象调用的</p>
+<h5 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h5><p>//1.开辟存储控件,存储创建新的对象new Object()</p>
+<p>//2.把this设置为当前对象</p>
+<p>//3.执行该函数中的代码,设置对象的属性和方法</p>
+<p>//4.返回创建新的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Student(name,age,sex) &#123;  </div><div class="line">this.name=name;  </div><div class="line">this.age=age;    </div><div class="line">this.sex=sex;   </div><div class="line">this.sayHi=<span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">console.log(<span class="string">"我叫"</span>+this.name);   </div><div class="line">&#125;;</div><div class="line">&#125;</div><div class="line">var stu1=new Student(<span class="string">"老王"</span>,20,<span class="string">"男"</span>);</div><div class="line">var stu2=new Student(<span class="string">"小明"</span>,5,<span class="string">"女"</span>);</div><div class="line">stu1.sayHi();</div><div class="line">stu2.sayHi();</div></pre></td></tr></table></figure></p>
+<p>Js中对象:无序的属性集合,可以看成是键值对<br>案例:动态为对象添加属性</p>
+<p>因为对象就是无序的属性集合,可以看成是键值对<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var stu1=new Student(<span class="string">"小杨"</span>,18,<span class="string">"男"</span>);</div><div class="line">//所以,可以这么玩</div><div class="line">console.log(stu1.name);</div><div class="line">console.log(stu1[<span class="string">"name"</span>]);</div><div class="line">stu1.age=100;stu1[<span class="string">"age"</span>]=1000;</div><div class="line">//动态为对象增加属性</div><div class="line">var obj=new Object();</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">obj[<span class="string">"n"</span>+i]=i;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">console.log(obj[<span class="string">"n"</span>+i]);&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;面向对象&quot;&gt;&lt;a href=&quot;#面向对象&quot; class=&quot;headerlink&quot; title=&quot;面向对象&quot;&gt;&lt;/a&gt;面向对象&lt;/h3&gt;&lt;h5 id=&quot;对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery</title>
+    <link href="http://yoursite.com/2017/02/07/jQuery/"/>
+    <id>http://yoursite.com/2017/02/07/jQuery/</id>
+    <published>2017-02-07T08:53:50.000Z</published>
+    <updated>2017-04-04T10:23:41.066Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是jQuery？"><a href="#什么是jQuery？" class="headerlink" title="什么是jQuery？"></a>什么是jQuery？</h3><p>jquery的官网：<a href="http://jquery.com/" target="_blank" rel="external">http://jquery.com/</a></p>
+<h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><p>说白了：jQuery就是一个js库，使用jQuery的话，会比使用JavaScript更简单。</p>
+<p>学习jQuery，主要学习jQuery的一大堆的api。</p>
+<p>API：application programming interface：应用程序编程接口，说白了，API就是方法。</p>
+<p>jQuery对比javascript的优势</p>
+<p>入口函数：javascript只能只能有一个个，后面的会覆盖前面，如果有多 jquery：可以有多个，并且不会发生覆盖的情况</p>
+<p>代码容错性：javascript代码容错性差，代码出现错误，会影响到后面代码的运行。jquery：代码容错性好，屏蔽错误，并且不会影响后面代码的运行。</p>
+<p>浏览器兼容性：javascript：兼容性差，比如火狐不支持innerText。jquery：对浏览器兼容性做了封装，因此不存在兼容性问题</p>
+<h5 id="jquery选择器："><a href="#jquery选择器：" class="headerlink" title="jquery选择器："></a>jquery选择器：</h5><p>ID选择器    $(“#id”);    获取指定ID的元素</p>
+<p>类选择器    $(“.class”);    获取同一类class的元素</p>
+<p>标签选择器    $(“div”);    获取同一类标签的所有元素</p>
+<p>并集选择器    $(“div,p,li”);    使用逗号分隔，只要符合条件之一就可。获取所有的div、p、li元素</p>
+<p>交集选择器（标签指定式选择器）    $(“div.redClass”);    注意选择器1和选择器2之间没有空格，class为redClass的div元素，注意区分后代选择器。</p>
+<h5 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h5><p>子代选择器    $(“ul&gt;li”);    使用&gt;号，获取儿子层级的元素，注意，并不会获取孙子层级的元素</p>
+<p>后代选择器    $(“ul li”);    使用空格，代表后代选择器，获取ul下的所有li元素，包括孙子等</p>
+<h5 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h5><p>:eq（index）    $(“li:eq(2)”).css(“color”, ”red”);    获取到的li元素中，选择索引号为2的元素，索引号index从0开始。</p>
+<p>:odd    $(“li:odd”).css(“color”, ”red”);    获取到的li元素中，选择索引号为奇数的元素</p>
+<p>:even    $(“li:even”).css(“color”, ”red”);    获取到的li元素中，选择索引号为偶数的元素</p>
+<h5 id="筛选选择器-方法"><a href="#筛选选择器-方法" class="headerlink" title="筛选选择器(方法)"></a>筛选选择器(方法)</h5><p>children(selector)    $(“ul”).children(“li”)    相当于$(“ul&gt;li”)，子类选择器</p>
+<p>find(selector)    $(“ul”).find(“li”);    相当于$(“ul li”),后代选择器</p>
+<p>siblings(selector)<br>    $(“#first”).siblings(“li”);查找兄弟节点，不包括自己本身。</p>
+<p>parent()    $(“#first”).parent();    查找父亲</p>
+<p>eq(index)    $(“li”).eq(2);    相当于$(“li:eq(2)”),index从0开始</p>
+<h3 id="jQuery操作DOM"><a href="#jQuery操作DOM" class="headerlink" title="jQuery操作DOM"></a>jQuery操作DOM</h3><ol>
+<li>jQuery操作样式</li>
+</ol>
+<p>css操作</p>
+<p>class操作</p>
+<ol>
+<li>jQuery动画</li>
+</ol>
+<p>三组基本动画</p>
+<p>jQuery自定义动画</p>
+<p>jQuery对话队列、停止动画</p>
+<ol>
+<li>jQuery操作DOM</li>
+</ol>
+<p>jQuery添加节点</p>
+<p>jQuery删除节点</p>
+<p>jQuery清空节点</p>
+<p>jQuery克隆节点</p>
+<h6 id="jquery操作尺寸"><a href="#jquery操作尺寸" class="headerlink" title="jquery操作尺寸"></a>jquery操作尺寸</h6><p>height()与width()：设置或者返回元素的高度及高度,返回结果是数值类型。</p>
+<p>innerWidth()与innerHeight()：返回元素的宽度及高度（包括padding）</p>
+<p>outerWidth()与outerHeigth()：返回元素的宽度及高度（包括padding、border）</p>
+<p>outWidth(true)与outerHeight(true)：返回元素的宽度及高度（包括padding、border、margin）</p>
+<p>注意：只有height()与width（）可以进行设置操作，innerWidth（）、outWidth（）都是只读属性，只能获取、不能设置。</p>
+<h4 id="jquery事件绑定"><a href="#jquery事件绑定" class="headerlink" title="jquery事件绑定"></a>jquery事件绑定</h4><p>1.简单事件绑定</p>
+<p>click(handler)            单击事件</p>
+<p>mouseenter(handler)        鼠标进入事件</p>
+<p>mouseleave(handler)        鼠标离开事件</p>
+<p>scroll(handler)            滚动事件</p>
+<p>缺点：一次只能绑定一个事件</p>
+<p>2.bind事件绑定</p>
+<p>不推荐使用，jQuery1.7版本后被on取代</p>
+<p>绑定多个事件</p>
+<p>第一个参数：事件类型</p>
+<p>第二个参数：事件处理程序</p>
+<p>缺点：不支持动态创建出来的元素绑定事件</p>
+<p>3.delegate事件绑定</p>
+<p>支持动态绑定事件</p>
+<p>第一个参数：selector，要绑定事件的元素</p>
+<p>第二个参数：事件类型</p>
+<p>第三个参数：事件处理函数</p>
+<p>　理解：为什么delegate支持动态绑定事件？原因是事件冒泡机制。因为事件时绑定到父元素上的，由子元素触发。
+　</p>
+<p>4.on事件绑定</p>
+<p>jQuery1.7之后，jQuery用on统一了所有事件的处理方法。</p>
+<p>优势：最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用。</p>
+<p>第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）</p>
+<p>第二个参数：selector, 执行事件的后代元素（可选），如果没有后代元素，那么事件将有自己执行。</p>
+<p>第三个参数：data，传递给处理函数的数据，事件触发的时候通过event.data来使用（不常使用）</p>
+<p>第四个参数：handler，事件处理函数<br>$(selector).on(events[,selector][,data],handler);</p>
+<h4 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h4><p>unbind() 方式（不用）</p>
+<p>作用：解绑事件</p>
+<p>undelegate() 方式（不用）</p>
+<p>作用：解绑事件</p>
+<p>off方式（重点）</p>
+<p>作用：解绑事件</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是jQuery？&quot;&gt;&lt;a href=&quot;#什么是jQuery？&quot; class=&quot;headerlink&quot; title=&quot;什么是jQuery？&quot;&gt;&lt;/a&gt;什么是jQuery？&lt;/h3&gt;&lt;p&gt;jquery的官网：&lt;a href=&quot;http://jquery.com/&quot;
     
     </summary>
     
