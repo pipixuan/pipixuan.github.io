@@ -89,16 +89,19 @@
 
 
 
-<meta name="description" content="少壮不努力，老大徒伤悲">
+<meta name="description" content="今天用Backbone做dome时出现了一个错误：1Uncaught Error: A &quot;url&quot; property or function must be specified
+在网上查了很多资料发现是使用Collection 时 url 没填的原因：1234567891011app.TodoCollection = Backbone.Collection.extend(&amp;#123;    mod">
 <meta property="og:type" content="article">
-<meta property="og:title" content="刘子轩的今天">
-<meta property="og:url" content="http://yoursite.com/2017/04/05/刘子轩的今天/index.html">
+<meta property="og:title" content="今日学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/04/05/今日学习笔记/index.html">
 <meta property="og:site_name" content="好学">
-<meta property="og:description" content="少壮不努力，老大徒伤悲">
-<meta property="og:updated_time" content="2017-04-05T13:20:03.278Z">
+<meta property="og:description" content="今天用Backbone做dome时出现了一个错误：1Uncaught Error: A &quot;url&quot; property or function must be specified
+在网上查了很多资料发现是使用Collection 时 url 没填的原因：1234567891011app.TodoCollection = Backbone.Collection.extend(&amp;#123;    mod">
+<meta property="og:updated_time" content="2017-04-05T15:25:46.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘子轩的今天">
-<meta name="twitter:description" content="少壮不努力，老大徒伤悲">
+<meta name="twitter:title" content="今日学习笔记">
+<meta name="twitter:description" content="今天用Backbone做dome时出现了一个错误：1Uncaught Error: A &quot;url&quot; property or function must be specified
+在网上查了很多资料发现是使用Collection 时 url 没填的原因：1234567891011app.TodoCollection = Backbone.Collection.extend(&amp;#123;    mod">
 
 
 
@@ -126,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/05/刘子轩的今天/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/05/今日学习笔记/"/>
 
 
 
 
 
-  <title> 刘子轩的今天 | 好学 </title>
+  <title> 今日学习笔记 | 好学 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/刘子轩的今天/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/今日学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘子轩">
@@ -292,7 +295,7 @@
             
             
               
-                刘子轩的今天
+                今日学习笔记
               
             
           </h1>
@@ -343,7 +346,9 @@
       
 
       
-        
+        <p>今天用Backbone做dome时出现了一个错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught Error: A <span class="string">"url"</span> property or <span class="keyword">function</span> must be specified</div></pre></td></tr></table></figure></p>
+<p>在网上查了很多资料发现是使用Collection 时 url 没填的原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">app.TodoCollection = Backbone.Collection.extend(&#123;</div><div class="line">    model:app.Todo,</div><div class="line">    //url: 需要填写字符串地址</div><div class="line">    localStroage: new Backbone.LocalStorage(&apos;todo&apos;),</div><div class="line"></div><div class="line">    getCompleted: function () &#123;</div><div class="line">      return this.filter(function (todo) &#123;</div><div class="line">          return todo.get(&apos;completed&apos;) === true;</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+
       
     </div>
 

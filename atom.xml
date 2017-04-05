@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-05T13:20:03.278Z</updated>
+  <updated>2017-04-05T15:25:46.058Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>刘子轩的今天</title>
-    <link href="http://yoursite.com/2017/04/05/%E5%88%98%E5%AD%90%E8%BD%A9%E7%9A%84%E4%BB%8A%E5%A4%A9/"/>
-    <id>http://yoursite.com/2017/04/05/刘子轩的今天/</id>
+    <title>今日学习笔记</title>
+    <link href="http://yoursite.com/2017/04/05/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/04/05/今日学习笔记/</id>
     <published>2017-04-05T13:20:03.000Z</published>
-    <updated>2017-04-05T13:20:03.278Z</updated>
+    <updated>2017-04-05T15:25:46.058Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天用Backbone做dome时出现了一个错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught Error: A <span class="string">"url"</span> property or <span class="keyword">function</span> must be specified</div></pre></td></tr></table></figure></p>
+<p>在网上查了很多资料发现是使用Collection 时 url 没填的原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">app.TodoCollection = Backbone.Collection.extend(&#123;</div><div class="line">    model:app.Todo,</div><div class="line">    //url: 需要填写字符串地址</div><div class="line">    localStroage: new Backbone.LocalStorage(&apos;todo&apos;),</div><div class="line"></div><div class="line">    getCompleted: function () &#123;</div><div class="line">      return this.filter(function (todo) &#123;</div><div class="line">          return todo.get(&apos;completed&apos;) === true;</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;今天用Backbone做dome时出现了一个错误：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td cl
     
     </summary>
     

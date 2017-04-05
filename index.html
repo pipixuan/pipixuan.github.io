@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/刘子轩的今天/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/今日学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘子轩">
@@ -294,8 +294,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/05/刘子轩的今天/" itemprop="url">
-                  刘子轩的今天
+                <a class="post-title-link" href="/2017/04/05/今日学习笔记/" itemprop="url">
+                  今日学习笔记
                 </a>
               
             
@@ -349,7 +349,9 @@
       
         
           
-            
+            <p>今天用Backbone做dome时出现了一个错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught Error: A <span class="string">"url"</span> property or <span class="keyword">function</span> must be specified</div></pre></td></tr></table></figure></p>
+<p>在网上查了很多资料发现是使用Collection 时 url 没填的原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">app.TodoCollection = Backbone.Collection.extend(&#123;</div><div class="line">    model:app.Todo,</div><div class="line">    //url: 需要填写字符串地址</div><div class="line">    localStroage: new Backbone.LocalStorage(&apos;todo&apos;),</div><div class="line"></div><div class="line">    getCompleted: function () &#123;</div><div class="line">      return this.filter(function (todo) &#123;</div><div class="line">          return todo.get(&apos;completed&apos;) === true;</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+
           
         
       
