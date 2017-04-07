@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-05T15:25:46.058Z</updated>
+  <updated>2017-04-06T14:23:45.121Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日学习笔记：gulp自动化构建工具</title>
+    <link href="http://yoursite.com/2017/04/06/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B017-04-06/"/>
+    <id>http://yoursite.com/2017/04/06/今日学习笔记17-04-06/</id>
+    <published>2017-04-06T14:21:32.000Z</published>
+    <updated>2017-04-06T14:23:45.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天学习了Gulp自动化构建工具，下面简单说说学习心得：<br>项目构建是指项目上线之前对项目源代码进行一系列处理，使其以最佳的形式运行于线上服务器。常见处理方式有：<br>　　　1.模块化开发<br>　　　2.使用less，sass等预处理器<br>　　　3.对静态资源进行压缩等等<br>以上这些任务如果完全靠手动来做的话，是非常好力并且容易出错的，所以就有了Gulp这种自动化构建工具，它可以处理一系列合并，压缩， 校验，预处理等任务。</p>
+<p>Gulp是基于Nodejs开发的一个构建工具，借助gulp插件可以实现不同的构建任务，其以简洁的配置和卓越的性能成为目前主流的构建工具<br>1.打开终端全局安装Gulp<br>　　　全局安装 npm install -g gulp<br>进入项目根目录执行<br>    npm install gulp<br>    (–save-dev添加–save-dev会在package.json记录依赖关系）<br>2.任务单<br>　　　在项目根目录中创建gulpfile.js，gulp会参考这个配置文件执行构建任务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">引入gulp</div><div class="line">var gulp = require(<span class="string">'gulp'</span>);</div><div class="line">定义任务</div><div class="line">glup.task(<span class="string">'default'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;)</div></pre></td></tr></table></figure></p>
+<p>3.定义任务<br>在gulpfile.js定义构建任务，如压缩、合并等。<br>gulp是通过调用插件来完成具体构建任务的，并且这些插件也都基于Nodejs,以编译LESS为例，安装npm install gulp-less，如下图定义任务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">引入gulp</div><div class="line">var gulp = require(<span class="string">'gulp'</span>);</div><div class="line">引入遍历less文件的插件</div><div class="line">    less = require(<span class="string">'gulp-less'</span>);</div><div class="line">    gulp.task(<span class="string">'less'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    定义任务</div><div class="line">        <span class="built_in">return</span> gulp.src(<span class="string">'./public/less/*.less'</span>)</div><div class="line">        .pipe(less())</div><div class="line">        .pipie(gulp.dest(<span class="string">'.public/css'</span>));</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<p>如上面定义了一个名为less的任务，用来完成less编译成的任务。<br>4.执行任务<br>打开终端并且换到项目根目录下，执行gulp less，这时全局安装的gulp就会以我们定义好的gulpfile.js<br>执行构建任务。<br>这样LESS文件便会编译成CSS文件，并保存在了./public/css目录下。</p>
+<p>gulp的工作原理：<br>　　　说白了就是做项目需要很多不同的插件实现构建任务，Gulp只是按着配置文件调用执行了这些插件。<br>　　　<br>gulp API:<br>这里不一一细说了，见官网：[<a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">http://www.gulpjs.com.cn/</a>]
+　　　</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天学习了Gulp自动化构建工具，下面简单说说学习心得：&lt;br&gt;项目构建是指项目上线之前对项目源代码进行一系列处理，使其以最佳的形式运行于线上服务器。常见处理方式有：&lt;br&gt;　　　1.模块化开发&lt;br&gt;　　　2.使用less，sass等预处理器&lt;br&gt;　　　3.对静态资源进
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>今日学习笔记</title>

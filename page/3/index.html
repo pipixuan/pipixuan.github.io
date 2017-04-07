@@ -272,6 +272,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/09/面向对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘子轩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/background.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/09/面向对象/" itemprop="url">
+                  面向对象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-09T23:10:21+08:00">
+                2017-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h5 id="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"><a href="#对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据" class="headerlink" title="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"></a>对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据</h5><p>举个例子比如：<br><a href="http://www.codecombat.cn" target="_blank" rel="external">http://www.codecombat.cn</a></p>
+<h6 id="面向对象与基于对象的区别"><a href="#面向对象与基于对象的区别" class="headerlink" title="面向对象与基于对象的区别"></a>面向对象与基于对象的区别</h6><p>面向对象：</p>
+<p>可以创建自定义的类型、很好的支持继承和多态。</p>
+<p>面向对象的语言c++/java/c#…</p>
+<p>面向对象的特征：封装、继承、多态</p>
+<p>万物皆对象,世间的一切事物都可以用对象来描述</p>
+<p>基于对象：<br>无法创建自定义的类型、不能很好的支持继承和多态。基于对象的语言JavaScript但是:js可以模拟面向对象,本身不具备面向对象的特征。</p>
+<h5 id="JavaScript中的对象"><a href="#JavaScript中的对象" class="headerlink" title="JavaScript中的对象"></a>JavaScript中的对象</h5><p>其属性可以包含基本值、对象或函数。对象就是一组没有顺序的值。我们可以把JavaScript中的对象想象成键值对，其中值可以是数据和函数。</p>
+<p>对象的行为和特征</p>
+<p>特征—属性</p>
+<p>行为—方法</p>
+<p>学生的行为:吃饭,睡觉,学习…</p>
+<p>学生的特征:名字,性别,身高,体重…</p>
+<h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5><p>使用关键字:new Object();此时在内存中开辟了一块空间,并且创建了一个没有任何属性和方法的对象。</p>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p>new Object()</p>
+<p>new后面调用方法，调用的方法，我们称为构造函数。Object() 我们把他视为一个构造函数，构造函数的本质就是一个函数，只不过构造函数的目的是为了创建新对象，为新对象进行初始化(设置对象的属性)构造函数解释:构建一个对象并且返回。</p>
+<p>new Object()开辟了空间，返回新的对象…</p>
+<p>函数和方法的区别:</p>
+<p>函数:直接调用的</p>
+<p>方法:对象调用的</p>
+<h5 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h5><p>//1.开辟存储控件,存储创建新的对象new Object()</p>
+<p>//2.把this设置为当前对象</p>
+<p>//3.执行该函数中的代码,设置对象的属性和方法</p>
+<p>//4.返回创建新的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Student(name,age,sex) &#123;  </div><div class="line">this.name=name;  </div><div class="line">this.age=age;    </div><div class="line">this.sex=sex;   </div><div class="line">this.sayHi=<span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">console.log(<span class="string">"我叫"</span>+this.name);   </div><div class="line">&#125;;</div><div class="line">&#125;</div><div class="line">var stu1=new Student(<span class="string">"老王"</span>,20,<span class="string">"男"</span>);</div><div class="line">var stu2=new Student(<span class="string">"小明"</span>,5,<span class="string">"女"</span>);</div><div class="line">stu1.sayHi();</div><div class="line">stu2.sayHi();</div></pre></td></tr></table></figure></p>
+<p>Js中对象:无序的属性集合,可以看成是键值对<br>案例:动态为对象添加属性</p>
+<p>因为对象就是无序的属性集合,可以看成是键值对<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var stu1=new Student(<span class="string">"小杨"</span>,18,<span class="string">"男"</span>);</div><div class="line">//所以,可以这么玩</div><div class="line">console.log(stu1.name);</div><div class="line">console.log(stu1[<span class="string">"name"</span>]);</div><div class="line">stu1.age=100;stu1[<span class="string">"age"</span>]=1000;</div><div class="line">//动态为对象增加属性</div><div class="line">var obj=new Object();</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">obj[<span class="string">"n"</span>+i]=i;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">console.log(obj[<span class="string">"n"</span>+i]);&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/07/jQuery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -510,7 +656,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
