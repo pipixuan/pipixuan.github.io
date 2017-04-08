@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-06T14:23:45.121Z</updated>
+  <updated>2017-04-08T13:27:31.288Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日学习笔记：解决Web Api支持跨域访问</title>
+    <link href="http://yoursite.com/2017/04/08/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/"/>
+    <id>http://yoursite.com/2017/04/08/今日学习笔记-1/</id>
+    <published>2017-04-08T13:23:38.000Z</published>
+    <updated>2017-04-08T13:27:31.288Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="跨域界定"><a href="#跨域界定" class="headerlink" title="跨域界定"></a>跨域界定</h4><h5 id="常见跨域："><a href="#常见跨域：" class="headerlink" title="常见跨域："></a>常见跨域：</h5><p>同IP不同端口：</p>
+<ul>
+<li>http:IP:8001/api/user</li>
+<li>http:IP:8002/api/user<br>不同IP不同端口：</li>
+<li><a href="http://172.28.20.100:8001/api/name" target="_blank" rel="external">http://172.28.20.100:8001/api/name</a></li>
+<li><a href="http://172.128.20.100:8002/api/name" target="_blank" rel="external">http://172.128.20.100:8002/api/name</a></li>
+</ul>
+<p>如何让你的 Web Api 接口，支持跨域访问。</p>
+<p>由于 web api 项目通常是被做成了一个独立站点，来提供数据，在做web api 项目的时候，不免前端会遇到跨域访问接口的问题。</p>
+<p>刚开始没做任何处理，用jsonp的方式调用 web api 接口，总是报一个错误:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SyntaxError:missing;before statement</div></pre></td></tr></table></figure>
+<p>用JSONP来获得跨域的数据，WebAPI本身是不支持javascript的callback的，它返回的JSON是这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"Yourmane"</span>:<span class="string">"王麻子"</span>]</div></pre></td></tr></table></figure></p>
+<p>然而，JSONP请求期望得到这样的JSON：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery([&#123;<span class="string">"Yourname"</span>:<span class="string">"王麻子"</span>&#125;])</div></pre></td></tr></table></figure></p>
+<p>所以我们需要对WebAPI做拓展，让它支持这样的callback</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> public class JsonCallbackAttribute : ActionFilterAttribute</div><div class="line"></div><div class="line">private const string CallbackQueryParameter = <span class="string">"callback"</span>;</div><div class="line"></div><div class="line">public override void OnActionExecuted(HttpActionExecutedContext context)</div><div class="line">&#123;</div><div class="line">var callback = string.Empty;</div><div class="line"><span class="keyword">if</span> (IsJsonp(out callback))</div><div class="line">    &#123;</div><div class="line">var jsonBuilder = new StringBuilder(callback);</div><div class="line"></div><div class="line">jsonBuilder.AppendFormat(<span class="string">"(&#123;0&#125;)"</span>, context.Response.Content.ReadAsStringAsync().Result);</div><div class="line"></div><div class="line">context.Response.Content = new StringContent(jsonBuilder.ToString());</div><div class="line">//context.Response.Content = new StringContent(<span class="string">"C(\"a\")"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">base.OnActionExecuted(context);</div><div class="line">&#125;</div><div class="line"></div><div class="line">private bool IsJsonp(out string callback)</div><div class="line">&#123;</div><div class="line">    callback = System.Web.HttpContext.Current.Request.QueryString[CallbackQueryParameter];</div><div class="line"></div><div class="line">    <span class="built_in">return</span> !string.IsNullOrEmpty(callback);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;跨域界定&quot;&gt;&lt;a href=&quot;#跨域界定&quot; class=&quot;headerlink&quot; title=&quot;跨域界定&quot;&gt;&lt;/a&gt;跨域界定&lt;/h4&gt;&lt;h5 id=&quot;常见跨域：&quot;&gt;&lt;a href=&quot;#常见跨域：&quot; class=&quot;headerlink&quot; title=&quot;常见跨域：&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>今日学习笔记：gulp自动化构建工具</title>

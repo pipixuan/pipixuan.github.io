@@ -89,34 +89,40 @@
 
 
 
-<meta name="description" content="面向对象对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据举个例子比如：http://www.codecombat.cn
-面向对象与基于对象的区别面向对象：
-可以创建自定义的类型、很好的支持继承和多态。
-面向对象的语言c++/java/c#…
-面向对象的特征：封装、继承、多态
-万物皆对象,世间的一切事物都可以用对象来描述
-基于对象：无法创建自定义的类型、不能">
+<meta name="description" content="跨域界定常见跨域：同IP不同端口：
+
+http:IP:8001/api/user
+http:IP:8002/api/user不同IP不同端口：
+http://172.28.20.100:8001/api/name
+http://172.128.20.100:8002/api/name
+
+如何让你的 Web Api 接口，支持跨域访问。
+由于 web api 项目通常是被做成了一个独立站点，来提供数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象">
-<meta property="og:url" content="http://yoursite.com/2017/02/09/面向对象/index.html">
+<meta property="og:title" content="今日学习笔记：解决Web Api支持跨域访问">
+<meta property="og:url" content="http://yoursite.com/2017/04/08/今日学习笔记-1/index.html">
 <meta property="og:site_name" content="好学">
-<meta property="og:description" content="面向对象对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据举个例子比如：http://www.codecombat.cn
-面向对象与基于对象的区别面向对象：
-可以创建自定义的类型、很好的支持继承和多态。
-面向对象的语言c++/java/c#…
-面向对象的特征：封装、继承、多态
-万物皆对象,世间的一切事物都可以用对象来描述
-基于对象：无法创建自定义的类型、不能">
-<meta property="og:updated_time" content="2017-04-04T08:51:15.714Z">
+<meta property="og:description" content="跨域界定常见跨域：同IP不同端口：
+
+http:IP:8001/api/user
+http:IP:8002/api/user不同IP不同端口：
+http://172.28.20.100:8001/api/name
+http://172.128.20.100:8002/api/name
+
+如何让你的 Web Api 接口，支持跨域访问。
+由于 web api 项目通常是被做成了一个独立站点，来提供数">
+<meta property="og:updated_time" content="2017-04-08T13:27:31.288Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象">
-<meta name="twitter:description" content="面向对象对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据举个例子比如：http://www.codecombat.cn
-面向对象与基于对象的区别面向对象：
-可以创建自定义的类型、很好的支持继承和多态。
-面向对象的语言c++/java/c#…
-面向对象的特征：封装、继承、多态
-万物皆对象,世间的一切事物都可以用对象来描述
-基于对象：无法创建自定义的类型、不能">
+<meta name="twitter:title" content="今日学习笔记：解决Web Api支持跨域访问">
+<meta name="twitter:description" content="跨域界定常见跨域：同IP不同端口：
+
+http:IP:8001/api/user
+http:IP:8002/api/user不同IP不同端口：
+http://172.28.20.100:8001/api/name
+http://172.128.20.100:8002/api/name
+
+如何让你的 Web Api 接口，支持跨域访问。
+由于 web api 项目通常是被做成了一个独立站点，来提供数">
 
 
 
@@ -144,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/09/面向对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/08/今日学习笔记-1/"/>
 
 
 
 
 
-  <title> 面向对象 | 好学 </title>
+  <title> 今日学习笔记：解决Web Api支持跨域访问 | 好学 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +295,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/09/面向对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/08/今日学习笔记-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘子轩">
@@ -310,7 +316,7 @@
             
             
               
-                面向对象
+                今日学习笔记：解决Web Api支持跨域访问
               
             
           </h1>
@@ -325,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-09T23:10:21+08:00">
-                2017-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T21:23:38+08:00">
+                2017-04-08
               </time>
             
 
@@ -361,33 +367,21 @@
       
 
       
-        <h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h5 id="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"><a href="#对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据" class="headerlink" title="对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"></a>对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据</h5><p>举个例子比如：<br><a href="http://www.codecombat.cn" target="_blank" rel="external">http://www.codecombat.cn</a></p>
-<h6 id="面向对象与基于对象的区别"><a href="#面向对象与基于对象的区别" class="headerlink" title="面向对象与基于对象的区别"></a>面向对象与基于对象的区别</h6><p>面向对象：</p>
-<p>可以创建自定义的类型、很好的支持继承和多态。</p>
-<p>面向对象的语言c++/java/c#…</p>
-<p>面向对象的特征：封装、继承、多态</p>
-<p>万物皆对象,世间的一切事物都可以用对象来描述</p>
-<p>基于对象：<br>无法创建自定义的类型、不能很好的支持继承和多态。基于对象的语言JavaScript但是:js可以模拟面向对象,本身不具备面向对象的特征。</p>
-<h5 id="JavaScript中的对象"><a href="#JavaScript中的对象" class="headerlink" title="JavaScript中的对象"></a>JavaScript中的对象</h5><p>其属性可以包含基本值、对象或函数。对象就是一组没有顺序的值。我们可以把JavaScript中的对象想象成键值对，其中值可以是数据和函数。</p>
-<p>对象的行为和特征</p>
-<p>特征—属性</p>
-<p>行为—方法</p>
-<p>学生的行为:吃饭,睡觉,学习…</p>
-<p>学生的特征:名字,性别,身高,体重…</p>
-<h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5><p>使用关键字:new Object();此时在内存中开辟了一块空间,并且创建了一个没有任何属性和方法的对象。</p>
-<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p>new Object()</p>
-<p>new后面调用方法，调用的方法，我们称为构造函数。Object() 我们把他视为一个构造函数，构造函数的本质就是一个函数，只不过构造函数的目的是为了创建新对象，为新对象进行初始化(设置对象的属性)构造函数解释:构建一个对象并且返回。</p>
-<p>new Object()开辟了空间，返回新的对象…</p>
-<p>函数和方法的区别:</p>
-<p>函数:直接调用的</p>
-<p>方法:对象调用的</p>
-<h5 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h5><p>//1.开辟存储控件,存储创建新的对象new Object()</p>
-<p>//2.把this设置为当前对象</p>
-<p>//3.执行该函数中的代码,设置对象的属性和方法</p>
-<p>//4.返回创建新的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Student(name,age,sex) &#123;  </div><div class="line">this.name=name;  </div><div class="line">this.age=age;    </div><div class="line">this.sex=sex;   </div><div class="line">this.sayHi=<span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">console.log(<span class="string">"我叫"</span>+this.name);   </div><div class="line">&#125;;</div><div class="line">&#125;</div><div class="line">var stu1=new Student(<span class="string">"老王"</span>,20,<span class="string">"男"</span>);</div><div class="line">var stu2=new Student(<span class="string">"小明"</span>,5,<span class="string">"女"</span>);</div><div class="line">stu1.sayHi();</div><div class="line">stu2.sayHi();</div></pre></td></tr></table></figure></p>
-<p>Js中对象:无序的属性集合,可以看成是键值对<br>案例:动态为对象添加属性</p>
-<p>因为对象就是无序的属性集合,可以看成是键值对<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var stu1=new Student(<span class="string">"小杨"</span>,18,<span class="string">"男"</span>);</div><div class="line">//所以,可以这么玩</div><div class="line">console.log(stu1.name);</div><div class="line">console.log(stu1[<span class="string">"name"</span>]);</div><div class="line">stu1.age=100;stu1[<span class="string">"age"</span>]=1000;</div><div class="line">//动态为对象增加属性</div><div class="line">var obj=new Object();</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">obj[<span class="string">"n"</span>+i]=i;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;10;i++)&#123;</div><div class="line">console.log(obj[<span class="string">"n"</span>+i]);&#125;</div></pre></td></tr></table></figure></p>
-
+        <h4 id="跨域界定"><a href="#跨域界定" class="headerlink" title="跨域界定"></a>跨域界定</h4><h5 id="常见跨域："><a href="#常见跨域：" class="headerlink" title="常见跨域："></a>常见跨域：</h5><p>同IP不同端口：</p>
+<ul>
+<li>http:IP:8001/api/user</li>
+<li>http:IP:8002/api/user<br>不同IP不同端口：</li>
+<li><a href="http://172.28.20.100:8001/api/name" target="_blank" rel="external">http://172.28.20.100:8001/api/name</a></li>
+<li><a href="http://172.128.20.100:8002/api/name" target="_blank" rel="external">http://172.128.20.100:8002/api/name</a></li>
+</ul>
+<p>如何让你的 Web Api 接口，支持跨域访问。</p>
+<p>由于 web api 项目通常是被做成了一个独立站点，来提供数据，在做web api 项目的时候，不免前端会遇到跨域访问接口的问题。</p>
+<p>刚开始没做任何处理，用jsonp的方式调用 web api 接口，总是报一个错误:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SyntaxError:missing;before statement</div></pre></td></tr></table></figure>
+<p>用JSONP来获得跨域的数据，WebAPI本身是不支持javascript的callback的，它返回的JSON是这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"Yourmane"</span>:<span class="string">"王麻子"</span>]</div></pre></td></tr></table></figure></p>
+<p>然而，JSONP请求期望得到这样的JSON：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery([&#123;<span class="string">"Yourname"</span>:<span class="string">"王麻子"</span>&#125;])</div></pre></td></tr></table></figure></p>
+<p>所以我们需要对WebAPI做拓展，让它支持这样的callback</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> public class JsonCallbackAttribute : ActionFilterAttribute</div><div class="line"></div><div class="line">private const string CallbackQueryParameter = <span class="string">"callback"</span>;</div><div class="line"></div><div class="line">public override void OnActionExecuted(HttpActionExecutedContext context)</div><div class="line">&#123;</div><div class="line">var callback = string.Empty;</div><div class="line"><span class="keyword">if</span> (IsJsonp(out callback))</div><div class="line">    &#123;</div><div class="line">var jsonBuilder = new StringBuilder(callback);</div><div class="line"></div><div class="line">jsonBuilder.AppendFormat(<span class="string">"(&#123;0&#125;)"</span>, context.Response.Content.ReadAsStringAsync().Result);</div><div class="line"></div><div class="line">context.Response.Content = new StringContent(jsonBuilder.ToString());</div><div class="line">//context.Response.Content = new StringContent(<span class="string">"C(\"a\")"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">base.OnActionExecuted(context);</div><div class="line">&#125;</div><div class="line"></div><div class="line">private bool IsJsonp(out string callback)</div><div class="line">&#123;</div><div class="line">    callback = System.Web.HttpContext.Current.Request.QueryString[CallbackQueryParameter];</div><div class="line"></div><div class="line">    <span class="built_in">return</span> !string.IsNullOrEmpty(callback);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -423,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/07/jQuery/" rel="next" title="jQuery">
-                <i class="fa fa-chevron-left"></i> jQuery
+              <a href="/2017/04/06/今日学习笔记17-04-06/" rel="next" title="今日学习笔记：gulp自动化构建工具">
+                <i class="fa fa-chevron-left"></i> 今日学习笔记：gulp自动化构建工具
               </a>
             
           </div>
@@ -432,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/01/对象模型/" rel="prev" title="对象模型：DOM操作">
-                对象模型：DOM操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据"><span class="nav-number">1.0.1.</span> <span class="nav-text">对象：可以理解为看得见，摸得着，具体特指的某一个东西。对象具有特征和行为，可以封装一些数据</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#面向对象与基于对象的区别"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">面向对象与基于对象的区别</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript中的对象"><span class="nav-number">1.0.2.</span> <span class="nav-text">JavaScript中的对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建对象"><span class="nav-number">1.0.3.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">1.0.4.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义构造函数"><span class="nav-number">1.0.5.</span> <span class="nav-text">自定义构造函数</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域界定"><span class="nav-number">1.</span> <span class="nav-text">跨域界定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见跨域："><span class="nav-number">1.1.</span> <span class="nav-text">常见跨域：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>

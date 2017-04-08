@@ -272,6 +272,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/08/今日学习笔记-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘子轩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/background.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="好学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/08/今日学习笔记-1/" itemprop="url">
+                  今日学习笔记：解决Web Api支持跨域访问
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T21:23:38+08:00">
+                2017-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="跨域界定"><a href="#跨域界定" class="headerlink" title="跨域界定"></a>跨域界定</h4><h5 id="常见跨域："><a href="#常见跨域：" class="headerlink" title="常见跨域："></a>常见跨域：</h5><p>同IP不同端口：</p>
+<ul>
+<li>http:IP:8001/api/user</li>
+<li>http:IP:8002/api/user<br>不同IP不同端口：</li>
+<li><a href="http://172.28.20.100:8001/api/name" target="_blank" rel="external">http://172.28.20.100:8001/api/name</a></li>
+<li><a href="http://172.128.20.100:8002/api/name" target="_blank" rel="external">http://172.128.20.100:8002/api/name</a></li>
+</ul>
+<p>如何让你的 Web Api 接口，支持跨域访问。</p>
+<p>由于 web api 项目通常是被做成了一个独立站点，来提供数据，在做web api 项目的时候，不免前端会遇到跨域访问接口的问题。</p>
+<p>刚开始没做任何处理，用jsonp的方式调用 web api 接口，总是报一个错误:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SyntaxError:missing;before statement</div></pre></td></tr></table></figure>
+<p>用JSONP来获得跨域的数据，WebAPI本身是不支持javascript的callback的，它返回的JSON是这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"Yourmane"</span>:<span class="string">"王麻子"</span>]</div></pre></td></tr></table></figure></p>
+<p>然而，JSONP请求期望得到这样的JSON：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery([&#123;<span class="string">"Yourname"</span>:<span class="string">"王麻子"</span>&#125;])</div></pre></td></tr></table></figure></p>
+<p>所以我们需要对WebAPI做拓展，让它支持这样的callback</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"> public class JsonCallbackAttribute : ActionFilterAttribute</div><div class="line"></div><div class="line">private const string CallbackQueryParameter = <span class="string">"callback"</span>;</div><div class="line"></div><div class="line">public override void OnActionExecuted(HttpActionExecutedContext context)</div><div class="line">&#123;</div><div class="line">var callback = string.Empty;</div><div class="line"><span class="keyword">if</span> (IsJsonp(out callback))</div><div class="line">    &#123;</div><div class="line">var jsonBuilder = new StringBuilder(callback);</div><div class="line"></div><div class="line">jsonBuilder.AppendFormat(<span class="string">"(&#123;0&#125;)"</span>, context.Response.Content.ReadAsStringAsync().Result);</div><div class="line"></div><div class="line">context.Response.Content = new StringContent(jsonBuilder.ToString());</div><div class="line">//context.Response.Content = new StringContent(<span class="string">"C(\"a\")"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">base.OnActionExecuted(context);</div><div class="line">&#125;</div><div class="line"></div><div class="line">private bool IsJsonp(out string callback)</div><div class="line">&#123;</div><div class="line">    callback = System.Web.HttpContext.Current.Request.QueryString[CallbackQueryParameter];</div><div class="line"></div><div class="line">    <span class="built_in">return</span> !string.IsNullOrEmpty(callback);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/06/今日学习笔记17-04-06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -511,133 +645,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/移动web开发概念/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘子轩">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/background.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="好学">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/04/移动web开发概念/" itemprop="url">
-                  移动web开发概念
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T22:20:50+08:00">
-                2017-04-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="移动Web开发"><a href="#移动Web开发" class="headerlink" title="移动Web开发"></a>移动Web开发</h3><h6 id="移动web开发布局有两种形式："><a href="#移动web开发布局有两种形式：" class="headerlink" title="移动web开发布局有两种形式："></a>移动web开发布局有两种形式：</h6><p>1.自适应布局<br>2.响应式布局<br>这两者的区别的，个人理解：<br>自适应只是根据页面的大小，内容百分比变化。<br>响应式是根据不同分辨率的设备而进行页面适配设计<br>这里我们主要说响应式开发</p>
-<h5 id="响应式开发"><a href="#响应式开发" class="headerlink" title="响应式开发"></a>响应式开发</h5><h6 id="什么是响应式开发"><a href="#什么是响应式开发" class="headerlink" title="什么是响应式开发"></a>什么是响应式开发</h6><p>在移动互联日益成熟的时候，我们在桌面浏览器上开发的网页已经无法满足移动设备的阅读。<br>通常的做法是针对移动端单独做一套特定的版本。<br>但是如果终端越来越多那么你需要开发的版本就会越来越多（大屏移动设备普及）。<br>那么Ethan Marcotte在2010年5月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端。</p>
-<h6 id="响应式开发的工作原理"><a href="#响应式开发的工作原理" class="headerlink" title="响应式开发的工作原理"></a>响应式开发的工作原理</h6><p>　　　CSS3中的Media Query（媒介查询）<br>　　　通过查询screen的宽度来指定某个宽度区间的网页布局<br>　　　超小屏幕（移动设备）    768px以下<br>　　　小屏设备    768px-992px<br>　　　中等屏幕    992px-1200px<br>　　　宽屏设备    1200px以上<br>响应式开发的前景<br>　　　现在的移动设备屏幕越来越大。<br>　　　越来越多的设计师也采用了这种设计。<br>　　　在新建站的一些网站现在普遍采用的响应式开发。<br>　　　那么在前端开发当中也是一项必备的技能。
-　　　</p>
-<h5 id="移动Web的开发类型："><a href="#移动Web的开发类型：" class="headerlink" title="移动Web的开发类型："></a>移动Web的开发类型：</h5><p>Native App（原生APP)：也就是完全使用移动设备系统语言写的客户端，iPhone iPad就是纯Object-C，安卓就是纯JAVA, 就是用户看到的界面啦体验到的交互啦都是原生的。这是性能最棒的开发方式，但灵活性就没下面的好<br>Web App, 这个就是在移动浏览器里打开的，纯HTML+CSS+JS，说白了就是个网页，在浏览器里打开的页面。。。<br>Hybrid App(混合App)： 我觉得这个更为合适一些。实际上是使用原生写了一个容器，然后使用HTML+CSS+JS来实现用户界面和交互。</p>
-<p>　　　
-　　　</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -687,7 +694,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
